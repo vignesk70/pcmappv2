@@ -1,58 +1,210 @@
+<!DOCTYPE HTML>
+<!--
+	Binary by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+{%load static%}
+<html>
+	<head>
+		<title>Peugeot Club Malaysia (PCM)</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{% static "pcmappv2/assets/css/main.css"%}" />
+	</head>
+	<body>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-  </head>
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="logo"><strong>Peugeot Club Malaysia</strong> (PCM)</a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
 
-  <body>
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="generic.html">Register</a></li>
+					<li><a href="elements.html">Members</a></li>
+					<li><a href="elements.html">Login</a></li>
+				</ul>
+			</nav>
 
-<div class="container-fluid">
-  <header class="main_menu_area navbar_fixed">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-              {%load static%}
-                <a class="navbar-brand" href="{% url 'pcmappv2:index' %}"><img src="{% static 'pcmappv2/logo.jpeg' %}" height="50" alt=""></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<h1>Welcome to the Peugot Club Malaysia Members Area</h1>
+					<h5>Do register your self if you are interested in being a member of the club. Click on Register from the menu.</h5>
+					<ul class="actions">
+						<li><a href="#one" class="button alt scrolly big">Continue</a></li>
+					</ul>
+				</div>
+			</section>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Register !</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">News</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact</a></li>
-                    </ul>
-                    <ul class="navbar-nav justify-content-end">
-                        <li><a href="#"><i class="icon_search"></i></a></li>
-                        <li><a href="#"><i class="icon_bag_alt"></i></a></li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-<!-- nav bar -->
+		<!-- One -->
+			<article id="one" class="post style1">
+				<div class="image">
+					<img src="{% static "pcmappv2/images/pic14.jpg"%}" alt="" data-position="75% center" />
+				</div>
+				<div class="content">
+					<div class="inner">
+						<header>
+							<h2><a href="generic.html">Registration as a Member</a></h2>
+							<p class="info">3 days ago by <a href="#">Jane Doe</a></p>
+						</header>
+						<p>To Register do follow the steps below:
+						</p>
+						<ol>
+							<li> afdafd</li>
+							<li> afdafd</li>
+							<li> afdafd</li>
+						</ol>
+						<ul class="actions">
+							<li><a href="generic.html" class="button alt">Read More</a></li>
+						</ul>
+					</div>
+					<div class="postnav">
+						<a href="#" class="prev disabled"><span class="icon fa-chevron-up"></span></a>
+						<a href="#two" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
+					</div>
+				</div>
+			</article>
 
-  <p>This is some text.</p>
-  <div class="row">
-    <div class="col-sm-3">this is col 1 asdfasdflasdf asdfa sdf asdf sdf</div>
-    <div class="col">this is col 2 asdfasdfadfadf asd fa sdf a sdf asdf a sdf as df</div>
-    <div class="col-sm-2">thiis col 3 how mcuh thiatsdfasdf as dfa sdf as dfa sdf asd fa sfd</div>
-  </div>
+		<!-- Two -->
+			<article id="two" class="post invert style1 alt">
+				<div class="image">
+					<img src="{% static "pcmappv2/images/pic13.jpg"%}" alt="" data-position="10% center" />
+				</div>
+				<div class="content">
+					<div class="inner">
+						<header>
+							<h2><a href="generic.html">Donec ex risus mollis</a></h2>
+							<p class="info">3 days ago by <a href="#">Jane Doe</a></p>
+						</header>
+						<p>Nullam posuere erat vel placerat rutrum. Praesent ac consectetur dui, et congue quam. Donec aliquam lacinia condimentum. Integer porta massa sapien, commodo sodales diam suscipit vitae. Aliquam quis felis sed urna semper semper. Phasellus eu scelerisque mi. Vivamus aliquam nisl libero, sit amet scelerisque ligula laoreet vel.</p>
+						<ul class="actions">
+							<li><a href="generic.html" class="button alt">Read More</a></li>
+						</ul>
+					</div>
+					<div class="postnav">
+						<a href="#one" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#three" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
+					</div>
+				</div>
+			</article>
 
-</div>
+		<!-- Three -->
+			<article id="three" class="post style2">
+				<div class="image">
+					<img src="{% static "pcmappv2/images/pic12.jpg"%}" alt="" data-position="80% center" />
+				</div>
+				<div class="content">
+					<div class="inner">
+						<header>
+							<h2><a href="generic.html">Sed tempus interdum</a></h2>
+							<p class="info">3 days ago by <a href="#">Jane Doe</a></p>
+						</header>
+						<p>Nullam posuere erat vel placerat rutrum. Praesent ac consectetur dui, et congue quam. Donec aliquam lacinia condimentum. Integer porta massa sapien, commodo sodales diam suscipit vitae. Aliquam quis felis sed urna semper semper. Phasellus eu scelerisque mi. Vivamus aliquam nisl libero, sit amet scelerisque ligula laoreet vel.</p>
+						<ul class="actions">
+							<li><a href="generic.html" class="button alt">Read More</a></li>
+						</ul>
+					</div>
+					<div class="postnav">
+						<a href="#two" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#four" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
+					</div>
+				</div>
+			</article>
 
-</body>
+		<!-- Four -->
+			<article id="four" class="post invert style2 alt">
+				<div class="image">
+					<img src="{% static "pcmappv2/images/pic14.jpg"%}" alt="" data-position="60% center" />
+				</div>
+				<div class="content">
+					<div class="inner">
+						<header>
+							<h2><a href="generic.html">Adipiscing sed urna</a></h2>
+							<p class="info">3 days ago by <a href="#">Jane Doe</a></p>
+						</header>
+						<p>Nullam posuere erat vel placerat rutrum. Praesent ac consectetur dui, et congue quam. Donec aliquam lacinia condimentum. Integer porta massa sapien, commodo sodales diam suscipit vitae. Aliquam quis felis sed urna semper semper. Phasellus eu scelerisque mi. Vivamus aliquam nisl libero, sit amet scelerisque ligula laoreet vel.</p>
+						<ul class="actions">
+							<li><a href="generic.html" class="button alt">Read More</a></li>
+						</ul>
+					</div>
+					<div class="postnav">
+						<a href="#three" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#five" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
+					</div>
+				</div>
+			</article>
 
+		<!-- Five -->
+			<article id="five" class="post style3">
+				<div class="image">
+					<img src="{% static "pcmappv2/images/pic13.jpg"%}" alt="" data-position="5% center" />
+				</div>
+				<div class="content">
+					<div class="inner">
+						<header>
+							<h2><a href="generic.html">Interdum et rutrum</a></h2>
+							<p class="info">3 days ago by <a href="#">Jane Doe</a></p>
+						</header>
+						<p>Nullam posuere erat vel placerat rutrum. Praesent ac consectetur dui, et congue quam. Donec aliquam lacinia condimentum. Integer porta massa sapien, commodo sodales diam suscipit vitae. Aliquam quis felis sed urna semper semper. Phasellus eu scelerisque mi. Vivamus aliquam nisl libero, sit amet scelerisque ligula laoreet vel.</p>
+						<ul class="actions">
+							<li><a href="generic.html" class="button alt">Read More</a></li>
+						</ul>
+					</div>
+					<div class="postnav">
+						<a href="#four" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#six" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
+					</div>
+				</div>
+			</article>
+
+		<!-- Six -->
+			<article id="six" class="post invert style3 alt">
+				<div class="image">
+					<img src="{% static "pcmappv2/images/pic12.jpg"%}" alt="" data-position="80% center" />
+				</div>
+				<div class="content">
+					<div class="inner">
+						<header>
+							<h2><a href="generic.html">Magna porta aliquam</a></h2>
+							<p class="info">3 days ago by <a href="#">Jane Doe</a></p>
+						</header>
+						<p>Nullam posuere erat vel placerat rutrum. Praesent ac consectetur dui, et congue quam. Donec aliquam lacinia condimentum. Integer porta massa sapien, commodo sodales diam suscipit vitae. Aliquam quis felis sed urna semper semper. Phasellus eu scelerisque mi. Vivamus aliquam nisl libero, sit amet scelerisque ligula laoreet vel.</p>
+						<ul class="actions">
+							<li><a href="generic.html" class="button alt">Read More</a></li>
+						</ul>
+					</div>
+					<div class="postnav">
+						<a href="#five" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#" class="scrolly next disabled"><span class="icon fa-chevron-down"></span></a>
+					</div>
+				</div>
+			</article>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+				</ul>
+				<div class="copyright">
+					&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{% static "pcmappv2/assets/js/jquery.min.js"%}"></script>
+			<script src="{% static "pcmappv2/assets/js/jquery.scrolly.min.js"%}"></script>
+			<script src="{% static "pcmappv2/assets/js/skel.min.js"%}"></script>
+			<script src="{% static "pcmappv2/assets/js/util.js"%}"></script>
+			<script src="{% static "pcmappv2/assets/js/main.js"%}"></script>
+
+	</body>
 </html>

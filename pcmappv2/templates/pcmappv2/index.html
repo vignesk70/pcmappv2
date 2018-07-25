@@ -1,1 +1,58 @@
-This is a templatefile
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+
+<div class="container-fluid">
+  <header class="main_menu_area navbar_fixed">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              {%load static%}
+                <a class="navbar-brand" href="{% url 'pcmappv2:index' %}"><img src="{% static 'pcmappv2/logo.jpeg' %}" height="50" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Register !</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">News</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact</a></li>
+                    </ul>
+                    <ul class="navbar-nav justify-content-end">
+                        <li><a href="#"><i class="icon_search"></i></a></li>
+                        <li><a href="#"><i class="icon_bag_alt"></i></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+<!-- nav bar -->
+
+  <p>This is some text.</p>
+  <div class="row">
+    <div class="col-sm-3">this is col 1 asdfasdflasdf asdfa sdf asdf sdf</div>
+    <div class="col">this is col 2 asdfasdfadfadf asd fa sdf a sdf asdf a sdf as df</div>
+    <div class="col-sm-2">thiis col 3 how mcuh thiatsdfasdf as dfa sdf as dfa sdf asd fa sfd</div>
+  </div>
+
+</div>
+
+</body>
+
+</html>

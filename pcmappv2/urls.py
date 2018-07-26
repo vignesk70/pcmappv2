@@ -6,4 +6,5 @@ app_name = 'pcmappv2'
 urlpatterns = [
     #display home page
     path('',views.IndexView.as_view(), name='index'),
+    path('register/',views.RegisterMember.as_view(),name='registermember'),
 ]

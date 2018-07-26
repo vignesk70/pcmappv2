@@ -1,0 +1,66 @@
+{%extends 'pcmappv2/base-site.html'%}
+{%block content%}
+<section id="main">
+  <div class="inner">
+    <header>
+      <h2>Register as a new member. </h2>
+      <p>Please key in your details and attach the details of your payment at the bottom of the form.</p>
+    </header>
+
+    <!-- Form are -->
+    <form method="post" action="#">
+      <div class="row uniform 50%">
+        <div class="6u 12u$(xsmall)">
+          <label> Full Name <label>
+          <input type="text" name="name" id="name" value placeholder="Full Name">
+        </div>
+        <div class="6u 12u$(xsmall)">
+          <label> Email <label>
+          <input type="text" name="email" id="email" value placeholder="Email Address">
+        </div>
+        <div class="6u 12u$(xsmall)">
+          <label> Phone Number <label>
+          <input type="text" name="phone" id="phone" value placeholder="Phone Number">
+        </div>
+        <div class="6u 12u$(xsmall)">
+          <label> Date of Birth <label>
+          <input type="text" name="birthdate" id="birthdate" value placeholder="Birth date">
+          <span class="icon fa-date"><span>
+        </div>
+        <div class="6u 12u$(xsmall)">
+          <label> Current Location<label>
+            <div class="select-wrapper">
+              <select name="state" id="state">
+                <option value>- State -</option>
+                <option value="1">Selangor</option>
+              </select>
+            </div>
+        </div>
+        <div class="6u 12u$(xsmall)">
+          <label>Post code<label>
+          <input type="text" name="postcode" id="postcode" value placeholder="Post code">
+        </div>
+        <label for "whatsapp">Would you like to join the WhatsApp group?<label>
+        <div class="6u 12u$(xsmall)">
+          <input type="radio" id="whatsapp-yes" name="whatsapp">
+          <label for "whatsapp-yes">Yes</label>
+        </div>
+        <div class="6u 12u$(xsmall)">
+          <input type="radio" id="whatsapp-no" name="whatsapp">
+          <label for "whatsapp-no">No </label>
+        </div>
+
+        <div class="12u$">
+          <ul class="actions">
+            <li><input type="submit" value="Register Now" class="special"></li>
+            <li><input type="reset" value="Reset form"></li>
+          </ul>
+        </div>
+
+      </div>
+
+
+    </form>
+  </div>
+</section>
+{%endblock%}

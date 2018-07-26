@@ -5,3 +5,6 @@ from django.views import generic
 
 class IndexView(generic.TemplateView):
     template_name='pcmappv2/index.html'
+
+class RegisterMember(generic.TemplateView):
+    template_name='pcmappv2/registermember.html'

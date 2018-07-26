@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<!--
+	Binary by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+{%load static%}
+<html>
+	<head>
+		<title>Peugeot Club Malaysia (PCM)</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{% static "pcmappv2/assets/css/main.css"%}" />
+		{% block headtag %}{%endblock%}
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="logo"><strong>Peugeot Club Malaysia</strong> (PCM)</a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="generic.html">Register</a></li>
+					<li><a href="elements.html">Members</a></li>
+					<li><a href="elements.html">Login</a></li>
+				</ul>
+			</nav>
+{%block content%}
+{%endblock%}
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+
+					<li><a href="http://www.facebook.com/peugeotclubmalaysia" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="https://www.instagram.com/peugeotclubmalaysia/" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+				</ul>
+				<div class="copyright">
+					&copy; Peugeot Club Malaysia
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{% static "pcmappv2/assets/js/jquery.min.js"%}"></script>
+			<script src="{% static "pcmappv2/assets/js/jquery.scrolly.min.js"%}"></script>
+			<script src="{% static "pcmappv2/assets/js/skel.min.js"%}"></script>
+			<script src="{% static "pcmappv2/assets/js/util.js"%}"></script>
+			<script src="{% static "pcmappv2/assets/js/main.js"%}"></script>
+
+	</body>
+</html>

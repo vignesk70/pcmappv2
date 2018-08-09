@@ -1,0 +1,2 @@
+gunicorn --daemon --workers 3 --bind unix:/home/vignes/Documents/pcmv2/pcmv2.sock pcmv2.wsgi
+

@@ -1,0 +1,22 @@
+{% extends "pcmappv2/base-site.html" %}
+{%block content%}
+{%load static%}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+</div class="container">
+{# Display a form #}
+<form action="#" method="form" class="form">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  {% buttons %}
+    <button type="submit" class="btn btn-primary">
+      Submit
+    </button>
+  {% endbuttons %}
+</form>
+</div>
+{%endblock%}

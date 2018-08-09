@@ -1,4 +1,7 @@
 {%extends 'pcmappv2/base-site.html'%}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
 {%block content%}
 <section id="main">
   <div class="inner">
@@ -8,57 +11,69 @@
     </header>
 
     <!-- Form are -->
-    <form method="post" action="#">
+    <h3>Member details </h3>
+    <form method="post" action="#" class="form">
+      {% csrf_token %}
       <div class="row uniform 50%">
+
         <div class="6u 12u$(xsmall)">
-          <label> Full Name <label>
-          <input type="text" name="name" id="name" value placeholder="Full Name">
+          {%bootstrap_field form.member_name%}
         </div>
         <div class="6u 12u$(xsmall)">
-          <label> Email <label>
-          <input type="text" name="email" id="email" value placeholder="Email Address">
+          {%bootstrap_field form.member_email%}
         </div>
         <div class="6u 12u$(xsmall)">
-          <label> Phone Number <label>
-          <input type="text" name="phone" id="phone" value placeholder="Phone Number">
+          {%bootstrap_field form.member_phone%}
         </div>
         <div class="6u 12u$(xsmall)">
-          <label> Date of Birth <label>
-          <input type="text" name="birthdate" id="birthdate" value placeholder="Birth date">
-          <span class="icon fa-date"><span>
+          {%bootstrap_field form.member_address_state%}
         </div>
         <div class="6u 12u$(xsmall)">
-          <label> Current Location<label>
-            <div class="select-wrapper">
-              <select name="state" id="state">
-                <option value>- State -</option>
-                <option value="1">Selangor</option>
-              </select>
-            </div>
+          {%bootstrap_field form.member_address_postcode%}
         </div>
         <div class="6u 12u$(xsmall)">
-          <label>Post code<label>
-          <input type="text" name="postcode" id="postcode" value placeholder="Post code">
+          {%bootstrap_field form.member_source%}
         </div>
-        <label for "whatsapp">Would you like to join the WhatsApp group?<label>
         <div class="6u 12u$(xsmall)">
+          {%bootstrap_field form.member_birthdate%}
+        </div>
+        <div class="6u 12u$(xsmall)">
+          {%bootstrap_field form.member_on_chat%}
+        </div>
+        <!--<label for "whatsapp">Would you like to join the WhatsApp group?<label>
+        <div class="12u">
           <input type="radio" id="whatsapp-yes" name="whatsapp">
           <label for "whatsapp-yes">Yes</label>
         </div>
         <div class="6u 12u$(xsmall)">
           <input type="radio" id="whatsapp-no" name="whatsapp">
           <label for "whatsapp-no">No </label>
-        </div>
-
-        <div class="12u$">
-          <ul class="actions">
-            <li><input type="submit" value="Register Now" class="special"></li>
-            <li><input type="reset" value="Reset form"></li>
-          </ul>
-        </div>
-
+        </div> -->
       </div>
 
+        <h3> Car details</h3>
+        <div class="row uniform 50%">
+        <div class="3u 12u$(xsmall)">
+          <label> Registration Number <label>
+          <input type="text" name="regnum" id="regnum" value placeholder="Registration No.">
+        </div>
+        <div class="3u 12u$(xsmall)">
+          <label> Model <label>
+          <input type="text" name="model" id="model" value placeholder="Model">
+        </div>
+        <div class="3u 12u$(xsmall)">
+          <label> Chassis <label>
+          <input type="text" name="chassis" id="chassis" value placeholder="Car Chassis">
+        </div>
+        <div class="3u 12u$(xsmall)">
+          <label> Year of Make <label>
+          <input type="text" name="yearmake" id="yearmake" value placeholder="Year of Make">
+        </div>
+      </div>
+
+      <div class="12u$">
+        {% bootstrap_button "Save" button_type="submit" button_class="btn-primary" %}
+      </div>
 
     </form>
   </div>

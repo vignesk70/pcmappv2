@@ -1,0 +1,28 @@
+{%extends 'pcmappv2/base-site.html'%}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{%block content%}
+
+<section id="main">
+  <div class="inner">
+    <header>
+      <h2>Member Details</h2>
+      <p>Details of the member below. </p>
+    </header>
+
+
+    {%if car%}
+        <p>Car Number: {{car.car_reg_no}}</p>
+        <p>Name: {{member.member_name}}</p>
+        <p class="{% if member.is_expired%} text-danger {%else%} text-success{%endif%}">Expiry Date:{{member.member_expiry_date}}</p>
+        <p>Phone: {{member.member_phone}}</p>
+        <p>Email: {{member.member_email}}</p>
+    {%else%}
+    <p>No members found</p>
+    {%endif%}
+    <a href="{%url 'pcmappv2:sccheck'%}" class="button special">Back to search</a>
+  </div>
+</section>
+
+{%endblock%}

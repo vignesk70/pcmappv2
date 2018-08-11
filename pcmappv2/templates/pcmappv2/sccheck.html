@@ -1,6 +1,22 @@
 {%extends 'pcmappv2/base-site.html'%}
 {%block content%}
-Scccheck form
 
-results of query
+<section id="main">
+  <div class="inner">
+    <header>
+      <h2>Service Center Query</h2>
+      <p>Please enter the car number that you would like to query. </p>
+    </header>
+    <form method="POST" action="{% url 'pcmappv2:sccheck' %}">
+        {% csrf_token %}
+        {{ form.management_form }}
+        {{ form.non_form_errors }}
+        {{ form }}
+      </br>
+        <input type='submit' value='Search'>
+    </form>
+    <!-- Form are -->
+
+  </div>
+</section>
 {%endblock%}

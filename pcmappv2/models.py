@@ -67,9 +67,10 @@ class Member(models.Model):
 
     @property
     def is_expired(self):
-        if self.member_expiry_date < date.today():
-            return True
-        return False
+        if self.member_expiry_date:
+            if self.member_expiry_date < date.today():
+                return True
+            return False
 
     def get_absolute_url(self):
         return reverse('member-detail',args=[str(self.id)] )

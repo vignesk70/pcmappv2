@@ -23,3 +23,15 @@ PaymentFormSet = inlineformset_factory(Member,
     fields = ['payment_date','payment_amount','payment_type','payment_receipt_image'],
     extra=1,
     widgets = {'payment_date':forms.DateInput(attrs={'type': 'date', 'format' :'YYYY-MM-DD'})})
+
+class SCCheckForm(forms.Form):
+    car_reg_no = forms.CharField(label='Car Registration Number', max_length=10)
+
+    def clean_car_reg_no(self):
+        car_reg_no = self.cleaned_data['car_reg_no']
+        car_reg_no = car_reg_no.replace(" ","")
+        try:
+            obj = Car.objects.get(car_reg_no=car_reg_no)
+            return car_reg_no
+        except Car.DoesNotExist:
+            raise forms.ValidationError('No record found')

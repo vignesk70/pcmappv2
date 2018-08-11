@@ -12,12 +12,8 @@
 
     <!-- Form are -->
     <h3>Member details </h3>
-<<<<<<< HEAD
-    <form method="post" action="#" class="form">
+    <form method="post" enctype="multipart/form-data" action="#" class="form">
       {% csrf_token %}
-=======
-    <form method="post" action="#">
->>>>>>> 0e6477cd76d793651e559d5d017d2aaff30006eb
       <div class="row uniform 50%">
 
         <div class="6u 12u$(xsmall)">
@@ -41,12 +37,9 @@
         <div class="6u 12u$(xsmall)">
           {%bootstrap_field form.member_birthdate%}
         </div>
-<<<<<<< HEAD
         <div class="6u 12u$(xsmall)">
           {%bootstrap_field form.member_on_chat%}
         </div>
-=======
->>>>>>> 0e6477cd76d793651e559d5d017d2aaff30006eb
         <!--<label for "whatsapp">Would you like to join the WhatsApp group?<label>
         <div class="12u">
           <input type="radio" id="whatsapp-yes" name="whatsapp">
@@ -58,35 +51,35 @@
         </div> -->
       </div>
 
-        <h3> Car details</h3>
+
+
         <div class="row uniform 50%">
-        <div class="3u 12u$(xsmall)">
-          <label> Registration Number <label>
-          <input type="text" name="regnum" id="regnum" value placeholder="Registration No.">
+
+        <div class="6u 12u$(xsmall)">
+            <h3> Car details</h3>
+          {%bootstrap_formset car_form%}
+        <!--  <label> Registration Number <label>
+          <input type="text" name="regnum" id="regnum" value placeholder="Registration No."> -->
         </div>
-        <div class="3u 12u$(xsmall)">
-          <label> Model <label>
-          <input type="text" name="model" id="model" value placeholder="Model">
+        <div class="6u 12u$(xsmall)">
+           <h3> Payment details</h3>
+          {%bootstrap_formset receipt_form%}
+        <!--  <label> Model <label>
+          <input type="text" name="model" id="model" value placeholder="Model"> -->
         </div>
-        <div class="3u 12u$(xsmall)">
+      <!--  <div class="3u 12u$(xsmall)">
           <label> Chassis <label>
           <input type="text" name="chassis" id="chassis" value placeholder="Car Chassis">
         </div>
         <div class="3u 12u$(xsmall)">
           <label> Year of Make <label>
           <input type="text" name="yearmake" id="yearmake" value placeholder="Year of Make">
-        </div>
+        </div> -->
+
       </div>
 
       <div class="12u$">
-<<<<<<< HEAD
-        {% bootstrap_button "Save" button_type="submit" button_class="btn-primary" %}
-=======
-        <ul class="actions">
-          <li><input type="submit" value="Register Now" class="special"></li>
-          <li><input type="reset" value="Reset form"></li>
-        </ul>
->>>>>>> 0e6477cd76d793651e559d5d017d2aaff30006eb
+        {% bootstrap_button "Save" button_type="submit" button_class="btn special" %}
       </div>
 
     </form>

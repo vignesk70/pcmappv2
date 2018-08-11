@@ -28,8 +28,17 @@
 				<ul class="links">
 					<li><a href="{%url "pcmappv2:index"%}">Home</a></li>
 					<li><a href="{%url "pcmappv2:registermember"%}">Register</a></li>
-					<li><a href="elements.html">Members</a></li>
-					<li><a href="elements.html">Login</a></li>
+					<li><a href="{%url "pcmappv2:activities"%}">Activities</a></li>
+					<li><a href="#">Member Area</a></li>
+					{% if user.is_authenticated %}
+  				<li><a href="#">Logged in as {{ user.username }}!</a></li>
+					<li><a href="{% url "pcmappv2:logout" %}">Logout</a></li>
+					<li> <a href="{%url "pcmappv2:password_change"%}">Password Change</a></li>
+						{% else %}
+						  <li><a href="{%url "pcmappv2:login"%}">Login</a></li>
+							<li><a href="{%url "pcmappv2:password_reset"%}">Password Reset</a></li>
+						{% endif %}
+
 				</ul>
 			</nav>
 {%block content%}

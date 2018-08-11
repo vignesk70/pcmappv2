@@ -127,6 +127,14 @@ class Payment(models.Model):
     payment_amount = models.IntegerField(verbose_name='Payment Amount')
     payment_type = models.CharField(max_length=1,choices = PAYMENT_CHOICES,verbose_name='Payment For')
     payment_receipt_image = models.FileField(upload_to='uploadreceipt',null=True,blank=True,verbose_name='Proof of Payment')
+
+    def __str__(self):
+        return self.payment_car_reg_no.member_name
+
+    def save(self,*args,**kwargs):
+        pass
+
 """
 update the expiry date when payment is made.
+
 """

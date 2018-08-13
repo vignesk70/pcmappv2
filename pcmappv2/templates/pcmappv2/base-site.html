@@ -29,9 +29,18 @@
 					<li><a href="{%url "pcmappv2:index"%}">Home</a></li>
 					<li><a href="{%url "pcmappv2:registermember"%}">Register</a></li>
 					<li><a href="{%url "pcmappv2:activities"%}">Activities</a></li>
-					<li><a href="#">Member Area</a></li>
 					{% if user.is_authenticated %}
-  				<li><a href="#">Logged in as {{ user.username }}!</a></li>
+					{%load pcm_extras%}
+						{% if request.user|has_group:"Member" %}
+	          	<li><a href="#">Member Area</a></li>
+	        	{% else %}
+	        	{% endif %}
+						{% if request.user|has_group:"ServiceCenter" %}
+            <li><a href="{%url 'pcmappv2:sccheck' %}">SC Check</a></li>
+          	{% else %}
+          	{% endif %}
+
+  				<li><a href="#">Logged in as {{ user.first_name }}!</a></li>
 					<li><a href="{% url "pcmappv2:logout" %}">Logout</a></li>
 					<li> <a href="{%url "pcmappv2:password_change"%}">Password Change</a></li>
 						{% else %}

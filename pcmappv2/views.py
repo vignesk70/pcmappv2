@@ -6,6 +6,8 @@ from django.core.files.storage import FileSystemStorage
 from .models import Member,Payment,Car
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User, Group
+from django.contrib.auth.decorators import login_required
+from django import template
 
 # Create your views here.
 
@@ -61,7 +63,8 @@ class NewMemberRegistationSuccess(generic.TemplateView):
 class ActivitiesList(generic.TemplateView):
     template_name='pcmappv2/activities.html'
 
-class SCCheck(generic.FormView):
+
+class SCCheck(LoginRequiredMixin,generic.FormView):
     template_name='pcmappv2/sccheck.html'
     form_class=SCCheckForm
     success_url='detail'
@@ -85,6 +88,7 @@ class SCCheck(generic.FormView):
         return self.render_to_response(
             self.get_context_data(form=form))
 
+
 class SCcheckDetailView(LoginRequiredMixin,generic.DetailView):
     model = Car
     template_name = 'pcmappv2/sccheck_detail.html'
@@ -93,6 +97,7 @@ class SCcheckDetailView(LoginRequiredMixin,generic.DetailView):
         context['car'] = Car.objects.get(pk=self.kwargs.get('pk',None))
         context['member'] = Member.objects.get(id=context['car'].member_id.pk)
         return context
+
 
 # class BootStrapView(generic.FormView):
 #     template_name='pcmappv2/bootstrap.html'

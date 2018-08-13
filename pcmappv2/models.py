@@ -133,8 +133,6 @@ class Payment(models.Model):
     def __str__(self):
         return self.payment_car_reg_no.member_name
 
-    def save(self,*args,**kwargs):
-        pass
 
 """
 update the expiry date when payment is made.

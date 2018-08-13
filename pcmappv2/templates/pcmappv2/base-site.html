@@ -35,7 +35,7 @@
 	          	<li><a href="#">Member Area</a></li>
 	        	{% else %}
 	        	{% endif %}
-						{% if request.user|has_group:"ServiceCenter" %}
+						{% if request.user|has_group:"Service Center" %}
             <li><a href="{%url 'pcmappv2:sccheck' %}">SC Check</a></li>
           	{% else %}
           	{% endif %}

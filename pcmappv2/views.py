@@ -99,6 +99,7 @@ class SCcheckDetailView(LoginRequiredMixin,generic.DetailView):
         return context
 
 
+
 # class BootStrapView(generic.FormView):
 #     template_name='pcmappv2/bootstrap.html'
 #     form_class=BootstrapForm

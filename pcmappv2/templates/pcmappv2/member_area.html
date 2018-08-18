@@ -18,9 +18,9 @@
         <li>Phone: {{member.member_phone}}</li>
         <li>Since: {{member.member_since}}</li>
         <li>DoB: {{member.member_birthdate}}</li>
-        <li>State: {{member.member_address_state}}</li>
+        <li>State: {{member.get_member_address_state_display}}</li>
         <li>Postcode: {{member.member_address_postcode}}</li>
-        <li>Joined via: {{member.member_source}}</li>
+        <li>Joined via: {{member.get_member_source_display}}</li>
         <li>On WhatsApp: {%if member.member_on_chat%}Yes{%else%}No{%endif%}</li>
         <strong><li class="{% if member.is_expired%}text-danger{%else%}text-success{%endif%}">Expiry: {{member.member_expiry_date}}</li></strong>
         {%if cars%}

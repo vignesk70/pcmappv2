@@ -99,6 +99,16 @@ class SCcheckDetailView(LoginRequiredMixin,generic.DetailView):
         return context
 
 
+class MemberArea(LoginRequiredMixin,generic.TemplateView):
+    template_name='pcmappv2/member_area.html'
+    model=Member
+    def get_context_data(self, **kwargs):
+        context =  super(MemberArea, self).get_context_data(**kwargs)
+        owner= self.request.user
+        context['member'] = get_object_or_404(Member,owner=self.request.user)
+        context['payment'] = Payment.objects.filter(payment_car_reg_no__owner=self.request.user)
+        context['cars'] = Car.objects.filter(member_id=get_object_or_404(Member,owner=self.request.user))
+        return context
 
 # class BootStrapView(generic.FormView):
 #     template_name='pcmappv2/bootstrap.html'

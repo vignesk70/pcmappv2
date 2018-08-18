@@ -33,7 +33,7 @@
 					{% if user.is_authenticated %}
 					{%load pcm_extras%}
 						{% if request.user|has_group:"Member" %}
-	          	<li><a href="#">Member Area</a></li>
+	          	<li><a href="{%url 'pcmappv2:member_area'%}">Member Area</a></li>
 	        	{% else %}
 	        	{% endif %}
 						{% if request.user|has_group:"Service Center" %}
@@ -41,7 +41,7 @@
           	{% else %}
           	{% endif %}
 
-  				<li><a href="#">Logged in as {{ user.first_name }}!</a></li>
+  				<li><a href="#">Logged in as {{ user.first_name }}!</a> </li>
 					<li><a href="{% url "pcmappv2:logout" %}">Logout</a></li>
 					<li> <a href="{%url "pcmappv2:password_change"%}">Password Change</a></li>
 						{% else %}

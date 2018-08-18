@@ -1,0 +1,50 @@
+{%extends 'pcmappv2/base-site.html'%}
+{%block content%}
+
+<section id="main">
+  <div class="inner">
+    <header>
+      <h2>Member Area </h2>
+      <p>Welcome to the members area. You can perform the following actions from here. </p>
+    </header>
+
+    <!-- Form are -->
+    <div class="row">
+      <div class="col-sm-6">
+        <h5> Membership Details </h5>
+        <ul class="list-unstyled">
+        <li>Name: <strong>{{member.member_name}}</strong></li>
+        <li>Email: {{member.member_email}}</li>
+        <li>Phone: {{member.member_phone}}</li>
+        <li>Since: {{member.member_since}}</li>
+        <li>DoB: {{member.member_birthdate}}</li>
+        <li>State: {{member.member_address_state}}</li>
+        <li>Postcode: {{member.member_address_postcode}}</li>
+        <li>Joined via: {{member.member_source}}</li>
+        <li>On WhatsApp: {%if member.member_on_chat%}Yes{%else%}No{%endif%}</li>
+        <strong><li class="{% if member.is_expired%}text-danger{%else%}text-success{%endif%}">Expiry: {{member.member_expiry_date}}</li></strong>
+        {%if cars%}
+          {%for car in cars%}
+            <li>Car Reg. No.: {{car.car_reg_no}} ({{car.car_model}})</li>
+          {%endfor%}
+        {%endif%}
+        </ul>
+
+      </div>
+      <div class="col-sm-6">
+        <h5> Payment History </h5>
+        <ul class="list-unstyled">
+          {%for x in payment%}
+        <li>Date: {{x.payment_date}}</li>
+        <li>Amount: RM {{x.payment_amount}}</li>
+      </br>
+        {%endfor%}
+
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{%endblock%}

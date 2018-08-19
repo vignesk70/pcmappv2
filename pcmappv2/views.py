@@ -110,6 +110,7 @@ class MemberArea(LoginRequiredMixin,generic.TemplateView):
         context['cars'] = Car.objects.filter(member_id=get_object_or_404(Member,owner=self.request.user))
         return context
 
+
 # class BootStrapView(generic.FormView):
 #     template_name='pcmappv2/bootstrap.html'
 #     form_class=BootstrapForm

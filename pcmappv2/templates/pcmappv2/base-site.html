@@ -36,6 +36,10 @@
 	          	<li><a href="{%url 'pcmappv2:member_area'%}">Member Area</a></li>
 	        	{% else %}
 	        	{% endif %}
+						{% if request.user|has_group:"PCM Admin" %}
+	          	<li><a href="{%url 'pcmappv2:member_expiry'%}">Member Expiry</a></li>
+	        	{% else %}
+	        	{% endif %}
 						{% if request.user|has_group:"Service Center" %}
             <li><a href="{%url 'pcmappv2:sccheck' %}">SC Check</a></li>
           	{% else %}

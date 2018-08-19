@@ -8,7 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.decorators import login_required
 from django import template
-
+from datetime import date
 # Create your views here.
 
 class IndexView(generic.TemplateView):
@@ -109,6 +109,12 @@ class MemberArea(LoginRequiredMixin,generic.TemplateView):
         context['payment'] = Payment.objects.filter(payment_car_reg_no__owner=self.request.user)
         context['cars'] = Car.objects.filter(member_id=get_object_or_404(Member,owner=self.request.user))
         return context
+
+class PCMMemberExpiring(LoginRequiredMixin,generic.ListView):
+    template_name='pcmappv2/member_expiring.html'
+    model=Member
+    queryset = Member.objects.select_related().filter(member_expiry_date__month=date.today().month,member_expiry_date__year=date.today().year)
+
 
 
 # class BootStrapView(generic.FormView):

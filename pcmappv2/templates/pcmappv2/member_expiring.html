@@ -1,0 +1,28 @@
+{%extends 'pcmappv2/base-site.html'%}
+{%block content%}
+
+<section id="main">
+  <div class="inner">
+    <header>
+      <h2>Membership Expiring this month</h2>
+      <p>Details of the member/s are below. </p>
+    </header>
+
+
+    {%if object_list%}
+      {%for member in object_list%}
+      <ul class="list-unstyled">
+        <li>Name: {{member.member_name}}</li>
+        <strong><li class="{% if member.is_expired%}text-danger{%else%}text-success{%endif%}">Expiry Date:{{member.member_expiry_date}}</li> </strong>
+        <li>Phone: {{member.member_phone}}</li>
+        <li>Email: {{member.member_email}}</li>
+      </ul>
+      {%endfor%}
+    {%else%}
+    <p>No membership expiring this month</p>
+    {%endif%}
+
+  </div>
+</section>
+
+{%endblock%}

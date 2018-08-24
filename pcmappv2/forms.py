@@ -16,7 +16,7 @@ class NewMemberRegistrationForm(forms.ModelForm):
 
 CarRegistrationFormSet =  inlineformset_factory(Member,
     Car,
-    fields = ['member_id','car_reg_no','car_model','car_engine_chasis','car_primary_sec'],
+    fields = ['member_id','car_reg_no','car_model','car_primary_sec'],
     extra=1)
 PaymentFormSet = inlineformset_factory(Member,
     Payment,

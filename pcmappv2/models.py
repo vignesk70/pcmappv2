@@ -82,7 +82,6 @@ class MemberManager(models.Manager):
         return self.get_queryset().filter(member_expiry_date__month = date.today().month)
 
 
-
 """
 Function to build
 1. create user when saving and link to member id
@@ -98,7 +97,7 @@ class Car(models.Model):
     member_id = models.ForeignKey(Member, on_delete=models.CASCADE)
     car_reg_no = models.CharField(max_length=20, verbose_name='Registration Number')
     car_model = models.CharField(max_length=20, verbose_name='Model')
-    car_engine_chasis = models.CharField(max_length=20, verbose_name='Engine Chassis',blank=True,null=True)
+    #car_engine_chasis = models.CharField(max_length=20, verbose_name='Engine Chassis',blank=True,null=True)
     car_primary_sec = models.SmallIntegerField(blank=True,null=True,choices=PRIMARY_SEC_CHOICES, verbose_name='Primary/Secondary Car')
     car_status = models.BooleanField(default=True,verbose_name='Status')
     def __str__(self):
@@ -128,13 +127,13 @@ class Payment(models.Model):
     payment_date = models.DateField(blank=True,verbose_name='Payment Date')
     payment_amount = models.IntegerField(verbose_name='Payment Amount')
     payment_type = models.CharField(max_length=1,choices = PAYMENT_CHOICES,verbose_name='Payment For')
-    payment_receipt_image = models.FileField(upload_to='uploadreceipt',null=True,blank=True,verbose_name='Proof of Payment')
+    payment_receipt_image = models.FileField(upload_to='uploadreceipt',null=False,blank=False,verbose_name='Proof of Payment')
 
     def __str__(self):
         return self.payment_car_reg_no.member_name
 
-
 """
+Highlight field message - all fields required
 update the expiry date when payment is made.
 
 """

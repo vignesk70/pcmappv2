@@ -64,6 +64,8 @@ class Member(models.Model):
             g.user_set.add(user)
             g.save()
             self.owner = user
+        if (self.member_since == None):
+            self.member_since = Payment.objects.filter(payment_date_)
         super(Member, self).save(*args, **kwargs)
 
     @property
@@ -94,9 +96,35 @@ class Car(models.Model):
         (1,'Primary'),
         (2,'Secondary'),
         )
+    CAR_MODEL = (
+        ('2008','2008'),
+        ('206','206'),
+        ('206 CC','206 CC'),
+        ('207','207'),
+        ('207 CC','207 CC'),
+        ('208','208'),
+        ('208 GTi','208 GTi'),
+        ('3008','3008'),
+        ('306','306'),
+        ('307','307'),
+        ('308','308'),
+        ('308 CC','308 CC'),
+        ('405','405'),
+        ('406','406'),
+        ('407','407'),
+        ('408','408'),
+        ('5008','5008'),
+        ('504','504'),
+        ('508','508'),
+        ('508 SW','508 SW'),
+        ('807','807'),
+        ('Partner','Partner'),
+        ('RCZ','RCZ'),
+        ('Traveller','Traveller'),
+    )
     member_id = models.ForeignKey(Member, on_delete=models.CASCADE)
     car_reg_no = models.CharField(max_length=20, verbose_name='Registration Number')
-    car_model = models.CharField(max_length=20, verbose_name='Model')
+    car_model = models.CharField(max_length=20, choices=CAR_MODEL,verbose_name='Model')
     #car_engine_chasis = models.CharField(max_length=20, verbose_name='Engine Chassis',blank=True,null=True)
     car_primary_sec = models.SmallIntegerField(blank=True,null=True,choices=PRIMARY_SEC_CHOICES, verbose_name='Primary/Secondary Car')
     car_status = models.BooleanField(default=True,verbose_name='Status')

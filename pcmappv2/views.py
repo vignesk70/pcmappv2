@@ -9,7 +9,23 @@ from django.contrib.auth.models import User, Group
 from django.contrib.auth.decorators import login_required
 from django import template
 from datetime import date
+from django.core.mail import send_mail
+from django.conf import settings
+from django.urls import reverse
+import json
+import urllib
+import requests
+
 # Create your views here.
+
+def email(request):
+    subject = 'New membership registration from '+ request.member_name
+    message = subject + '. Please login to the admin site to validate' # reverse('pcmappv2:sccheck_detail',args=[str(request.pk)])
+    email_from = settings.EMAIL_HOST_USER
+    recipient_list = ['info@peugeotclubmalaysia.com',]
+    send_mail(subject,message,email_from,recipient_list)
+    return True
+
 
 class IndexView(generic.TemplateView):
     template_name='pcmappv2/index.html'
@@ -31,12 +47,25 @@ class RegisterMember(generic.FormView):
                                   receipt_form=receipt_form))
 
     def post(self, request, *args, **kwargs):
+
         self.object = None
         form_class = self.get_form_class()
         form = self.get_form(form_class)
         car_form = CarRegistrationFormSet(self.request.POST)
         receipt_form = PaymentFormSet(self.request.POST, self.request.FILES)
-        if (form.is_valid() and car_form.is_valid() and receipt_form.is_valid()):
+
+        ''' Begin reCAPTCHA validation '''
+        recaptcha_response = request.POST.get('g-recaptcha-response')
+        data = {
+            'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+            'response': recaptcha_response
+        }
+        r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
+        result = r.json()
+
+        ''' End reCAPTCHA validation '''
+
+        if (form.is_valid() and car_form.is_valid() and receipt_form.is_valid() and result['success']):
             return self.form_valid(form, car_form, receipt_form)
         else:
             return self.form_invalid(form, car_form, receipt_form)
@@ -47,6 +76,8 @@ class RegisterMember(generic.FormView):
         car_form.save()
         receipt_form.instance = self.object
         receipt_form.save()
+        email(self.object)
+
         return HttpResponseRedirect(self.get_success_url())
 
     def form_invalid(self, form, car_form,receipt_form):

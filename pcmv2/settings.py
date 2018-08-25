@@ -134,9 +134,26 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# default login
 LOGIN_URL = 'pcmappv2:login'
 LOGIN_REDIRECT_URL = 'pcmappv2:index'
 LOGOUT_REDIRECT_URL = 'pcmappv2:index'
 
-EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
-EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
+# Email configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'vigneswaren.krishnamoorthy@gmail.com'
+EMAIL_HOST_PASSWORD = 'gjliyxwuoycsnxus'
+
+
+#deployment parameters
+X_FRAME_OPTIONS = 'DENY'
+SESSION_COOKIE_SECURE = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+CSRF_COOKIE_SECURE = True
+SECURE_BROWSER_XSS_FILTER = True
+
+#google recaptcha
+GOOGLE_RECAPTCHA_SECRET_KEY = '6LfLRGwUAAAAAAiErKnuIpPyGZskkPX8tErehWsg'

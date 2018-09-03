@@ -3,6 +3,7 @@ import os
 
 
 file = '/home/vignes/Documents/pcm/pcmapp/20180514_PCM SC Buddy_fixed_2.csv'
+file = '/home/peugeotclubmalaysia/20180514_PCM SC Buddy_fixed_2.csv'
 
 from pcmappv2.models import Member,Car,Payment,User,Group
 Group.objects.get_or_create(name='Member')

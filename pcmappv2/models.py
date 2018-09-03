@@ -45,6 +45,8 @@ class Member(models.Model):
     member_on_chat = models.BooleanField(default=True,verbose_name = 'Would you like to be added to our WhatsApp Group?' )
     member_source = models.CharField(max_length=2,choices = SOURCE_CHOICES,blank=True,null=True,verbose_name = 'Where did you hear about us?')
     member_expiry_date = models.DateField(blank=True,null=True)
+    member_pdpa_accepted = models.BooleanField(default=False,blank=False,verbose_name='By selecting "Yes" you agree to the PCM PDPA policy.')
+    member_status =  models.BooleanField(default=True,verbose_name='Status')
     owner = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
@@ -58,14 +60,24 @@ class Member(models.Model):
         r =  User.objects.filter(email=self.member_email)
         if (r.count() < 1):
             user = User.objects.create_user(self.member_email,self.member_email,'asdfgh123')
-            user.first_name = self.member_name
+            user.first_name = self.member_name[:25]+"..."
             user.save()
             g = Group.objects.get(name='Member')
             g.user_set.add(user)
             g.save()
             self.owner = user
-        if (self.member_since == None):
-            self.member_since = Payment.objects.filter(payment_date_)
+#payment needs to consider the renewal date.
+        if (self._state.adding is True):
+            pass
+        else:
+            payment = Payment.objects.filter(payment_car_reg_no=self.id).order_by('-id')[0]
+
+            if (self.member_since == None):
+                self.member_since = payment.payment_date
+            if(self.member_expiry_date == None):
+                self.member_expiry_date = payment.payment_date.replace(payment.payment_date.year+2)
+            else:
+                self.member_expiry_date = self.member_expiry_date.replace(self.member_expiry_date.year+2)
         super(Member, self).save(*args, **kwargs)
 
     @property
@@ -75,13 +87,20 @@ class Member(models.Model):
                 return True
             return False
 
+    @property
+    def is_member_expiring_in_month(self):
+        if self.member_expiry_date < date.today():
+            return True
+        else:
+            return False
+
     def get_absolute_url(self):
         return reverse('member-detail',args=[str(self.id)] )
 
 class MemberManager(models.Manager):
     @property
     def is_expiring_in_month(self):
-        return self.get_queryset().filter(member_expiry_date__month = date.today().month)
+        return self.get_queryset().filter(member_expiry_date__lte = date.today().month)
 
 
 """

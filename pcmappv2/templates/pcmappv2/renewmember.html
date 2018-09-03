@@ -1,0 +1,36 @@
+{%extends 'pcmappv2/base-site.html'%}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{%block content%}
+<section id="main">
+  <div class="inner">
+    <header>
+      <h2>Renew Membership</h2>
+      <p>Please attach the details of your payment.</p>
+    </header>
+
+    <!-- Form are -->
+    <h3>Payment Details</h3>
+    Renewal for {{member.member_name}}
+  </br>
+    <form method="post" enctype="multipart/form-data" action="#" class="form">
+      {% csrf_token %}
+
+      <div class="row uniform 50%">
+        <div class="6u 12u$(xsmall)">
+          {%bootstrap_form form%}
+        </div>
+
+      </div>
+    </br>
+      <div class="12u$">
+<!--        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <div class="g-recaptcha" data-sitekey="6LfLRGwUAAAAAHHsE0huKka-Ze4-CXkYqz4OYU-f"></div> -->
+        {% bootstrap_button "Save" button_type="submit" button_class="btn special" %}
+      </div>
+
+    </form>
+  </div>
+</section>
+{%endblock%}

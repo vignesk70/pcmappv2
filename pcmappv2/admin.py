@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 from .models import Member,Car,Payment
-admin.AdminSite.site_header='Peugot Club Administration'
+admin.AdminSite.site_header='Peugeot Club Administration'
 
 class PaymentInLine(admin.TabularInline):
     model = Payment

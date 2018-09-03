@@ -40,7 +40,11 @@
         <div class="6u 12u$(xsmall)">
           {%bootstrap_field form.member_on_chat%}
         </div>
-
+        <div class="6u 12u$(xsmall)">
+          {%bootstrap_field form.member_pdpa_accepted%}
+          {%load static%}
+          <small>Click <a href="{%static 'pcmappv2/images/PDPA_PCM_2508018 - PDF.pdf'%}">here</a> to download the PDPA document</small>
+        </div>
       </div>
 
       <div class="row uniform 50%">

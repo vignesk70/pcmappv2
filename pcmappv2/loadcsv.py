@@ -36,6 +36,10 @@ for mem in members:
         mem.owner = user
         mem.save()
 
+"""
+code for mysqlbackup on python pythonanywhere
+mysqldump -u peugeotclubmalay -h peugeotclubmalaysia.mysql.pythonanywhere-services.com 'peugeotclubmalay$pcmapp'  > db-backup_4sept2018.sql
+"""
 #member_name,member_email,member_phone,member_since,member_birthdate,member_address_state,member_address_postcode,member_on_chat,member_source,member_expiry_date
 #car_reg_no,car_model,car_engine_chasis,car_primary_sec,car_status
 #payment_date,payment_amount,payment_type

@@ -60,7 +60,8 @@ class Member(models.Model):
         r =  User.objects.filter(email=self.member_email)
         if (r.count() < 1):
             user = User.objects.create_user(self.member_email,self.member_email,'asdfgh123')
-            user.first_name = self.member_name[:25]+"..."
+            firstname = self.member_name[:25] + ( self.member_name[25:] and "...")
+            user.first_name = firstname
             user.save()
             g = Group.objects.get(name='Member')
             g.user_set.add(user)

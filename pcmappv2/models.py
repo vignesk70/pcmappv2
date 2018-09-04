@@ -46,7 +46,7 @@ class Member(models.Model):
     member_source = models.CharField(max_length=2,choices = SOURCE_CHOICES,blank=True,null=True,verbose_name = 'Where did you hear about us?')
     member_expiry_date = models.DateField(blank=True,null=True)
     member_pdpa_accepted = models.BooleanField(default=False,blank=False,verbose_name='By selecting "Yes" you agree to the PCM PDPA policy.')
-    member_status =  models.BooleanField(default=True,verbose_name='Status')
+    member_status =  models.BooleanField(default=True,verbose_name='Membership Status')
     owner = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):

@@ -19,7 +19,7 @@ import requests
 # Create your views here.
 
 def email(request):
-    subject = 'New membership/renewal from '+ request.member_name
+    subject = 'New membership request from '+ request.member_name
     message = subject + '. Please login to the admin site to validate' # reverse('pcmappv2:sccheck_detail',args=[str(request.pk)])
     email_from = settings.EMAIL_HOST_USER
     recipient_list = ['info@peugeotclubmalaysia.com',]

@@ -157,7 +157,7 @@ class Car(models.Model):
     #def get_absolute_url(self):
     #    return reverse('pcmapp:index')
     def save(self, *args, **kwargs):
-        for field_name in ['car_reg_no','car_model','car_engine_chasis']:
+        for field_name in ['car_reg_no',]:
             val = getattr(self, field_name, False)
             if val:
                 setattr(self, field_name, val.upper())

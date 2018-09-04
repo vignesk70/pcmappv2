@@ -2,8 +2,8 @@ import csv
 import os
 
 
-file = '/home/vignes/Documents/pcm/pcmapp/20180514_PCM SC Buddy_fixed_2.csv'
-file = '/home/peugeotclubmalaysia/20180514_PCM SC Buddy_fixed_2.csv'
+file = '/home/vignes/Downloads/PCM LIST 310818_modified - PCM Membership 2018 (4).csv'
+file = '/home/peugeotclubmalaysia/PCM LIST 310818_modified - PCM Membership 2018 (4).csv'
 
 from pcmappv2.models import Member,Car,Payment,User,Group
 Group.objects.get_or_create(name='Member')

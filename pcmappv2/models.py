@@ -67,18 +67,6 @@ class Member(models.Model):
             g.user_set.add(user)
             g.save()
             self.owner = user
-#payment needs to consider the renewal date.
-        if (self._state.adding is True):
-            pass
-        else:
-            payment = Payment.objects.filter(payment_car_reg_no=self.id).order_by('-id')[0]
-
-            if (self.member_since == None):
-                self.member_since = payment.payment_date
-            if(self.member_expiry_date == None):
-                self.member_expiry_date = payment.payment_date.replace(payment.payment_date.year+2)
-            else:
-                self.member_expiry_date = self.member_expiry_date.replace(self.member_expiry_date.year+2)
         super(Member, self).save(*args, **kwargs)
 
     @property
@@ -168,6 +156,8 @@ class Car(models.Model):
             val =  getattr(self, field_name, False)
             if val:
                 setattr(self, field_name, val.replace(" ",""))
+
+
         super(Car, self).save(*args, **kwargs)
 """
 define secondary car insert
@@ -187,8 +177,23 @@ class Payment(models.Model):
     def __str__(self):
         return self.payment_car_reg_no.member_name
 
+#payment needs to consider the renewal date.
+    def save(self, *args, **kwargs):
+        if (self._state.adding is True):
+            pass
+        else:
+            mem = Member.objects.get(pk=self.payment_car_reg_no.id)
+            #new registration
+            if (mem.member_since == None and self.payment_type=='1'):
+                mem.member_since=self.payment_date
+                mem.member_expiry_date = self.payment_date.replace(self.payment_date.year+2)
+                mem.save()
+            #update existing member
+            if(mem.member_expiry_date != None and self.payment_type=='2'):
+                mem.member_expiry_date = mem.member_expiry_date.replace(mem.member_expiry_date.year+2)
+                mem.save()
+                #self.payment_car_reg_no.member_expiry_date = self.payment_date.replace(self.payment_date.year+2)
+        super().save(*args, **kwargs)
 """
-Highlight field message - all fields required
-update the expiry date when payment is made.
-
+Highlight field message - all fields required update the expiry date when payment is made.
 """

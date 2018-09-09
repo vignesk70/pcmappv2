@@ -20,6 +20,7 @@ class MemberAdmin(admin.ModelAdmin):
 
 class CarAdmin(admin.ModelAdmin):
     list_display=('car_reg_no','member_id','car_model')
+    search_fields=('member_id__member_name','car_reg_no')
 
 admin.site.register(Member,MemberAdmin)
 admin.site.register(Car,CarAdmin)

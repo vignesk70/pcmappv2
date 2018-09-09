@@ -9,6 +9,7 @@ from django.contrib.auth.models import User, Group
 from django.contrib.auth.decorators import login_required
 from django import template
 from datetime import date
+from django.utils.formats import date_format
 from django.core.mail import send_mail
 from django.conf import settings
 from django.urls import reverse
@@ -20,17 +21,17 @@ import requests
 
 def email(request):
     subject = 'New membership request from '+ request.member_name
-    message = subject + '. Please login to the admin site to validate' # reverse('pcmappv2:sccheck_detail',args=[str(request.pk)])
+    message = subject + '. Payment date: '+ date_format(request.payment_date) +'. Please login to the admin site to validate' # reverse('pcmappv2:sccheck_detail',args=[str(request.pk)])
     email_from = settings.EMAIL_HOST_USER
-    recipient_list = ['info@peugeotclubmalaysia.com',]
+    recipient_list = ['vignes_k@yahoo.com',]
     send_mail(subject,message,email_from,recipient_list)
     return True
 
 def email_renew(request):
-    subject = 'New membership request from '+ request.member_name
-    message = subject + '. Please login to the admin site to validate' # reverse('pcmappv2:sccheck_detail',args=[str(request.pk)])
+    subject = 'Membership renewal from '+ request.payment_car_reg_no.member_name
+    message = subject + '. Payment date: '+ date_format(request.payment_date) +'. Please login to the admin site to validate' # reverse('pcmappv2:sccheck_detail',args=[str(request.pk)])
     email_from = settings.EMAIL_HOST_USER
-    recipient_list = ['info@peugeotclubmalaysia.com',]
+    recipient_list = ['vignes_k@yahoo.com',]
     send_mail(subject,message,email_from,recipient_list)
     return True
 
@@ -205,7 +206,7 @@ class MembershipRenew(LoginRequiredMixin,generic.FormView):
         payment.payment_car_reg_no = get_object_or_404(Member,owner=self.request.user)
         payment.save()
         #self.object = form.save()
-        #email(payment)
+        email_renew(payment)
         return HttpResponseRedirect(self.get_success_url())
 
     def form_invalid(self, form):

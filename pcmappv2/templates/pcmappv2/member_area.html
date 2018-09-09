@@ -41,7 +41,7 @@
         {%endfor%}
 
         </ul>
-        {%if member.is_member_expiring_in_month%}
+        {%if member.is_expiring_in_month%}
         <ul class="actions">
           <li><a href="{%url 'pcmappv2:member_renew' member.pk%}" class="button special">Renew Membership</a></li>
         </ul>

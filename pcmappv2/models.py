@@ -78,18 +78,25 @@ class Member(models.Model):
 
     @property
     def is_member_expiring_in_month(self):
-        if self.member_expiry_date < date.today():
+        if self.member_expiry_date < date.today() and self.member_status==True:
             return True
         else:
             return False
 
-    def get_absolute_url(self):
-        return reverse('member-detail',args=[str(self.id)] )
-
-class MemberManager(models.Manager):
     @property
     def is_expiring_in_month(self):
-        return self.get_queryset().filter(member_expiry_date__lte = date.today().month)
+        #if Payment.objects.filter(payment_date__lte=self.member_expiry_date):
+        if self.member_expiry_date < date.today() and self.member_status==True:
+            x =  Payment.objects.filter(payment_car_reg_no=self.pk).latest('payment_date')
+            if x.payment_date.year == self.member_expiry_date.year:
+                return False
+            return True
+        else:
+            return False
+    #self.get_queryset().filter(member_expiry_date__lte = date.today())
+
+    def get_absolute_url(self):
+        return reverse('member-detail',args=[str(self.id)] )
 
 
 """

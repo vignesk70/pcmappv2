@@ -15,11 +15,11 @@
         <li>Name: {{member.member_name}}</li>
         <strong><li class="{% if member.is_expired%}text-danger{%else%}text-success{%endif%}">Expiry Date:{{member.member_expiry_date}}</li> </strong>
         <li>Phone: {{member.member_phone}}</li>
-        <li>Email: {{member.member_email}}</li>
+        <li>Email: <a href="mailto:{{member.member_email}}">{{member.member_email}}</a></li>
       </ul>
       {%endfor%}
     {%else%}
-    <p>No membership expiring this month</p>
+    <p>No membership are expired</p>
     {%endif%}
 
   </div>

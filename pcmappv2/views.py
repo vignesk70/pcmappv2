@@ -23,7 +23,7 @@ def email(request):
     subject = 'New membership request from '+ request.member_name
     message = subject + '. Payment date: '+ date_format(request.payment_date) +'. Please login to the admin site to validate' # reverse('pcmappv2:sccheck_detail',args=[str(request.pk)])
     email_from = settings.EMAIL_HOST_USER
-    recipient_list = ['vignes_k@yahoo.com',]
+    recipient_list = ['info@peugeotclubmalaysia.com',]
     send_mail(subject,message,email_from,recipient_list)
     return True
 
@@ -31,7 +31,7 @@ def email_renew(request):
     subject = 'Membership renewal from '+ request.payment_car_reg_no.member_name
     message = subject + '. Payment date: '+ date_format(request.payment_date) +'. Please login to the admin site to validate' # reverse('pcmappv2:sccheck_detail',args=[str(request.pk)])
     email_from = settings.EMAIL_HOST_USER
-    recipient_list = ['vignes_k@yahoo.com',]
+    recipient_list = ['info@peugeotclubmalaysia.com',]
     send_mail(subject,message,email_from,recipient_list)
     return True
 

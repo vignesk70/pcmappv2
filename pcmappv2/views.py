@@ -185,18 +185,18 @@ class MembershipRenew(LoginRequiredMixin,generic.FormView):
         #form = self.get_form(form_class)
         form = MembershipRenewForm(self.request.POST, self.request.FILES)
         #form['payment_car_reg_no']=self.request.user
-        # ''' Begin reCAPTCHA validation '''
-        # recaptcha_response = request.POST.get('g-recaptcha-response')
-        # data = {
-        #     'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
-        #     'response': recaptcha_response
-        # }
-        # r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
-        # result = r.json()
-        #
-        # ''' End reCAPTCHA validation '''
+        ''' Begin reCAPTCHA validation '''
+        recaptcha_response = request.POST.get('g-recaptcha-response')
+        data = {
+            'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+            'response': recaptcha_response
+        }
+        r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
+        result = r.json()
 
-        if (form.is_valid() ): #and result['success']
+        ''' End reCAPTCHA validation '''
+
+        if (form.is_valid() and result['success'] ):
             return self.form_valid(form)
         else:
             return self.form_invalid(form)

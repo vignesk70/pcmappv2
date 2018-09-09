@@ -19,4 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('pcmappv2/',include('pcmappv2.urls')),
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
+
 ]

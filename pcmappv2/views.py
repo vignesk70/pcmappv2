@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect,HttpResponse
 from django.views import generic
-from .forms import NewMemberRegistrationForm, CarRegistrationFormSet, PaymentFormSet,SCCheckForm, MembershipRenewForm
+from .forms import NewMemberRegistrationForm, CarRegistrationFormSet, PaymentFormSet,SCCheckForm, MembershipRenewForm, EditMemberRegistrationForm
 from django.core.files.storage import FileSystemStorage
 from .models import Member,Payment,Car
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -12,7 +12,7 @@ from datetime import date
 from django.utils.formats import date_format
 from django.core.mail import send_mail
 from django.conf import settings
-from django.urls import reverse
+from django.urls import reverse,reverse_lazy
 import json
 import urllib
 import requests
@@ -216,6 +216,64 @@ class MembershipRenew(LoginRequiredMixin,generic.FormView):
 class RenewSuccess(generic.TemplateView):
     template_name='pcmappv2/renewsuccess.html'
 
+class MembershipEdit(LoginRequiredMixin,generic.UpdateView):
+    template_name = 'pcmappv2/member_area_edit.html'
+    model =  Member
+    form_class = EditMemberRegistrationForm
+    success_url = 'pcmappv2:member_area'
+
+
+    def get_context_data(self, **kwargs):
+        context =  super(MembershipEdit, self).get_context_data(**kwargs)
+        context['member'] = get_object_or_404(Member,owner=self.request.user)
+        print(context)
+        return context
+
+    def get(self, request, *args, **kwargs):
+        #initial = {'payment_car_reg_no': get_object_or_404(Member,owner=self.request.user)}
+        self.object = get_object_or_404(Member,pk=self.kwargs['pk'])
+        form_class = self.get_form_class()
+        # form = self.form_class(initial=self.initial)
+        form = self.get_form(form_class)
+        #form.instance.payment_car_reg_no = get_object_or_404(Member,owner=self.request.user)
+        #form..payment_car_reg_no=get_object_or_404(Member,owner=self.request.user)
+        return self.render_to_response(
+            self.get_context_data(form=form))
+
+    # def post(self, request, *args, **kwargs):
+    #     self.object = None
+    #     form_class = self.get_form_class()
+    #     #form = self.get_form(form_class)
+    #     form = NewMemberRegistrationForm(self.request.POST, self.request.FILES)
+    #     #form['payment_car_reg_no']=self.request.user
+    #     # ''' Begin reCAPTCHA validation '''
+    #     # recaptcha_response = request.POST.get('g-recaptcha-response')
+    #     # data = {
+    #     #     'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+    #     #     'response': recaptcha_response
+    #     # }
+    #     # r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
+    #     # result = r.json()
+    #     #
+    #     # ''' End reCAPTCHA validation '''
+    #
+    #     if (form.is_valid()  ): #and result['success']
+    #         return self.form_valid(form)
+    #     else:
+    #         return self.form_invalid(form)
+    #
+    # def form_valid(self, form):
+    #     self.object = form.save()
+    #     print(self.object)
+    #     print(form)
+    #     return HttpResponseRedirect(self.get_success_url())
+    #
+    # def form_invalid(self, form):
+    #     return self.render_to_response(
+    #         self.get_context_data(form=form))
+
+    def get_success_url(self, *args, **kwargs):
+        return reverse("pcmappv2:member_area")
 # class BootStrapView(generic.FormView):
 #     template_name='pcmappv2/bootstrap.html'
 #     form_class=BootstrapForm

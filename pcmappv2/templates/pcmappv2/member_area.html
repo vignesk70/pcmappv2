@@ -28,6 +28,8 @@
             <li>Car Reg. No.: {{car.car_reg_no}} ({{car.car_model}})</li>
           {%endfor%}
         {%endif%}
+        <li><a href="{%url 'pcmappv2:member_edit' member.pk%}" class="button special">Edit Details</a></li>
+
         </ul>
 
       </div>

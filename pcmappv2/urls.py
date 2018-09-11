@@ -14,6 +14,7 @@ urlpatterns = [
     path('sccheck/detail/<int:pk>',views.SCcheckDetailView.as_view(),name='sccheck_detail'),
     path('member/',views.MemberArea.as_view(),name='member_area'),
     path('member/renew/<int:pk>',views.MembershipRenew.as_view(),name='member_renew'),
+    path('member/edit/<int:pk>',views.MembershipEdit.as_view(),name='member_edit'),
     path('member/renew/success',views.RenewSuccess.as_view(),name='renewalsuccess'),
     path('member/expiry',views.PCMMemberExpiring.as_view(),name='member_expiry'),
     path('accounts/', include('django.contrib.auth.urls')),

@@ -8,8 +8,8 @@ class NewMemberRegistrationForm(forms.ModelForm):
         fields = ['member_name','member_email','member_phone','member_birthdate','member_address_state','member_address_postcode','member_on_chat','member_source','member_pdpa_accepted']
         widgets = {
             'member_birthdate': forms.DateInput(attrs={'type': 'date', 'format' :'YYYY-MM-DD'}),
-            'member_name' : forms.TextInput(attrs={'size':40}),
-            'member_email' : forms.TextInput(attrs={'size':40}),
+            'member_name' : forms.TextInput(attrs={'size':50}),
+            'member_email' : forms.TextInput(attrs={'size':50}),
             'member_address_postcode' : forms.TextInput(attrs={'size':5}),
             'member_on_chat' : forms.NullBooleanSelect(attrs=None),
             'member_pdpa_accepted':forms.NullBooleanSelect(attrs=None),
@@ -46,3 +46,16 @@ class MembershipRenewForm(forms.ModelForm):
         fields = ['payment_car_reg_no','payment_date','payment_amount','payment_type','payment_receipt_image']
         widgets = {'payment_date':forms.DateInput(attrs={'type': 'date', 'format' :'YYYY-MM-DD'})}
         exclude=['payment_car_reg_no']
+
+class EditMemberRegistrationForm(forms.ModelForm):
+    class Meta:
+        model=Member
+        fields = ['member_name','member_email','member_phone','member_birthdate','member_address_state','member_address_postcode','member_on_chat','member_source','member_pdpa_accepted']
+        widgets = {
+            'member_birthdate': forms.DateInput(attrs={'type': 'date', 'format' :'YYYY-MM-DD'}),
+            'member_name' : forms.TextInput(attrs={'size':50,'readonly':'True'}),
+            'member_email' : forms.TextInput(attrs={'size':50, 'readonly':'True'}),
+            'member_address_postcode' : forms.TextInput(attrs={'size':5}),
+            'member_on_chat' : forms.NullBooleanSelect(attrs=None),
+            'member_pdpa_accepted':forms.NullBooleanSelect(attrs=None),
+        }

@@ -5,41 +5,24 @@
   <div class="inner">
     <header>
       <h2>Our Activities </h2>
-      <p>Take a look at our activities that we do and explore the gallery</p>
+      <p>Take a look at our activities that we do and explore the gallery on Facebook and Instagram</p>
     </header>
 
+    {%for activity in object_list%}
     <div class="row">
-      <div class="col s2">
-        <img class="img-thumbnail" src="{%static 'pcmappv2/images/annualtrip.jpg'%}" alt="Card image cap" width="200">
-      </div>
-      <div class="col s10">
-        Date: 05 July 2018 </br>
-        Event: BOTC Challenge 2 </br>
-        Activity: Challenge
-      </div>
-    </div>
-    <div class="row">
-      <div class="col s2">
-        <img class="img-thumbnail" src="{%static 'pcmappv2/images/fraser.jpg'%}" alt="Card image cap" width="200">
-
-      </div>
-      <div class="col s10">
-        Date: 045 July 2018 </br>
-        Event: BOTC Challenge 2 </br>
-        Activity: Challenge
-      </div>
-
-  </div>
-  <div class="row">
     <div class="col s2">
-      <img class="img-thumbnail" src="{%static 'pcmappv2/images/fraser.jpg'%}" alt="Card image cap" width="200">
-
+      <img class="img-thumbnail" src="{{activity.activity_image.url}}" alt="Card image cap" width="300">
     </div>
     <div class="col s10">
-      Date: 045 July 2018 </br>
-      Event: BOTC Challenge 2 </br>
-      Activity: Challenge
+      <strong>Date:</strong> {{activity.activity_date}} </br>
+      <strong>Event:</strong> {{activity.activity_title}} </br>
+      <strong>Activity:</strong> {{activity.activity_description}}<br>
+      <strong>FB Link:</strong> <a href="{{activity.activity_link_fb}}">{{activity.activity_link_fb}}</a></br>
+      <strong>IG Link:</strong> <a href="{{activity.activity_link_ig}}">{{activity.activity_link_ig}}</a>
     </div>
+  </div>
+
+    {%endfor%}
 
 </div>
 </section>

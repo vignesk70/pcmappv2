@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect,HttpResponse
 from django.views import generic
 from .forms import NewMemberRegistrationForm, CarRegistrationFormSet, PaymentFormSet,SCCheckForm, MembershipRenewForm, EditMemberRegistrationForm
 from django.core.files.storage import FileSystemStorage
-from .models import Member,Payment,Car
+from .models import Member,Payment,Car, Activity
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.decorators import login_required
@@ -100,8 +100,9 @@ class NewMemberRegistationSuccess(generic.TemplateView):
     template_name='pcmappv2/registrationsuccess.html'
 
 
-class ActivitiesList(generic.TemplateView):
+class ActivitiesList(generic.ListView):
     template_name='pcmappv2/activities.html'
+    model = Activity
 
 
 class SCCheck(LoginRequiredMixin,generic.FormView):

@@ -201,6 +201,25 @@ class Payment(models.Model):
                 mem.save()
                 #self.payment_car_reg_no.member_expiry_date = self.payment_date.replace(self.payment_date.year+2)
         super().save(*args, **kwargs)
+
+class Activity(models.Model):
+    activity_title = models.CharField(max_length=50,verbose_name='Event title')
+    activity_date = models.DateField(verbose_name='Event date')
+    activity_venue = models.CharField(max_length=100,verbose_name='Event location')
+    activity_description = models.CharField(max_length=500,verbose_name='Event description')
+    activity_link_fb = models.URLField(verbose_name='FB URL', blank=True,null=True)
+    activity_link_ig = models.URLField(verbose_name='IG URL', blank=True,null=True)
+    activity_create_date = models.DateTimeField()
+    activity_image = models.FileField(upload_to='static/images',verbose_name='Upload image')
+
+    class Meta:
+        verbose_name_plural='Activities'
+        ordering = ["-activity_date"]
+
+    def __str__(self):
+        return self.activity_title
+
+
 """
 Highlight field message - all fields required update the expiry date when payment is made.
 """

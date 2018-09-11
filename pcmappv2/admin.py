@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Member,Car,Payment
+from .models import Member,Car,Payment,Activity
 admin.AdminSite.site_header='Peugeot Club Administration'
 
 class PaymentInLine(admin.TabularInline):
@@ -25,3 +25,4 @@ class CarAdmin(admin.ModelAdmin):
 admin.site.register(Member,MemberAdmin)
 admin.site.register(Car,CarAdmin)
 admin.site.register(Payment)
+admin.site.register(Activity)

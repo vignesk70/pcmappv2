@@ -49,6 +49,9 @@ class Member(models.Model):
     member_status =  models.BooleanField(default=True,verbose_name='Membership Status')
     owner = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
 
+    class Meta:
+        ordering = ["member_name"]
+
     def __str__(self):
         return self.member_name
 

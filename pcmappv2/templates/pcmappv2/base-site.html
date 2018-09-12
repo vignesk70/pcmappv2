@@ -28,7 +28,9 @@
 			<nav id="menu">
 				<ul class="links">
 					<li><a href="{%url "pcmappv2:index"%}">Home</a></li>
+					{%if not user.is_authenticated%}
 					<li><a href="{%url "pcmappv2:registermember"%}">Register</a></li>
+					{%endif%}
 					<li><a href="{%url "pcmappv2:activities"%}">Activities</a></li>
 					{% if user.is_authenticated %}
 					{%load pcm_extras%}

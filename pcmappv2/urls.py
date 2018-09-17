@@ -20,6 +20,8 @@ urlpatterns = [
     path('member/edit/<int:pk>',views.MembershipEdit.as_view(),name='member_edit'),
     path('member/renew/success',views.RenewSuccess.as_view(),name='renewalsuccess'),
     path('member/expiry',views.PCMMemberExpiring.as_view(),name='member_expiry'),
+    path('statistics/',views.line_chart,name='line_chart'),
+    path('statistics/json',views.line_chart_json,name='line_chart_json'),
     path('accounts/', include('django.contrib.auth.urls')),
 # path('bootstrap/',views.BootStrapView.as_view(),name='bootstrap'),
 ]

@@ -33,7 +33,7 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'pcmappv2.apps.Pcmappv2Config',
     'bootstrap4',
-    'jchart',
+    'chartjs',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

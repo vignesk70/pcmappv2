@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from . import  settings
+from django.views.generic import RedirectView
 from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
@@ -23,6 +24,7 @@ urlpatterns = [
     path('pcmappv2/',include('pcmappv2.urls')),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('',RedirectView.as_view(url='/pcmappv2/')),
 
 ]
 

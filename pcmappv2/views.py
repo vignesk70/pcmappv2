@@ -24,9 +24,9 @@ from django.db.models import Count
 
 # Create your views here.
 
-def email(request):
-    subject = 'New membership request from '+ request.member_name
-    message = subject + '. Payment date: '+ date_format(request.payment_date) +'. Please login to the admin site to validate' # reverse('pcmappv2:sccheck_detail',args=[str(request.pk)])
+def email(memname,paymdate):
+    subject = 'New membership request from '+ memname
+    message = subject + '. Payment date: '+ date_format(paymdate) +'. Please login to the admin site to validate' # reverse('pcmappv2:sccheck_detail',args=[str(request.pk)])
     email_from = settings.EMAIL_HOST_USER
     recipient_list = ['info@peugeotclubmalaysia.com',]
     send_mail(subject,message,email_from,recipient_list)
@@ -90,7 +90,10 @@ class RegisterMember(generic.FormView):
         car_form.save()
         receipt_form.instance = self.object
         receipt_form.save()
-        email(self.object)
+        memname=form.cleaned_data['member_name']
+        paymdate = receipt_form[0].cleaned_data['payment_date']
+        print(memname,paymdate)
+        email(memname,paymdate)
 
         return HttpResponseRedirect(self.get_success_url())
 

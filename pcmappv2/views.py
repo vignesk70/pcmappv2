@@ -92,7 +92,7 @@ class RegisterMember(generic.FormView):
         receipt_form.save()
         memname=form.cleaned_data['member_name']
         paymdate = receipt_form[0].cleaned_data['payment_date']
-        print(memname,paymdate)
+        #print(memname,paymdate)
         email(memname,paymdate)
 
         return HttpResponseRedirect(self.get_success_url())

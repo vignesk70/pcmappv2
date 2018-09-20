@@ -40,6 +40,14 @@ for mem in members:
 code for mysqlbackup on python pythonanywhere
 mysqldump -u peugeotclubmalay -h peugeotclubmalaysia.mysql.pythonanywhere-services.com 'peugeotclubmalay$pcmapp'  > db-backup_4sept2018.sql
 """
+
+"""
+get collection by year and month
+Payment.objects.values('payment_date__year','payment_date__month').annotate(sum = Sum('payment_amount')).order_by('payment_date__year')
+
+"""
+
+
 #member_name,member_email,member_phone,member_since,member_birthdate,member_address_state,member_address_postcode,member_on_chat,member_source,member_expiry_date
 #car_reg_no,car_model,car_engine_chasis,car_primary_sec,car_status
 #payment_date,payment_amount,payment_type

@@ -36,7 +36,7 @@ class Member(models.Model):
         )
 
     member_name = models.CharField(max_length=200, verbose_name='Full Name')
-    member_email = models.EmailField(max_length=200, verbose_name='Email Address')
+    member_email = models.EmailField(max_length=200, verbose_name='Email Address', unique=True)
     member_phone = models.CharField(max_length=20,verbose_name='Mobile Number')
     member_since = models.DateField(blank=True, null=True)
     member_birthdate = models.DateField(blank=True, null=True, verbose_name='Your Birthdate')

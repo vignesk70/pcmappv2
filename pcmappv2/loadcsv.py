@@ -38,7 +38,7 @@ for mem in members:
 
 """
 code for mysqlbackup on python pythonanywhere
-mysqldump -u peugeotclubmalay -h peugeotclubmalaysia.mysql.pythonanywhere-services.com 'peugeotclubmalay$pcmapp'  > db-backup_4sept2018.sql
+mysqldump -u peugeotclubmalay -h peugeotclubmalaysia.mysql.pythonanywhere-services.com 'peugeotclubmalay$pcmapp'  > db-backup_15Oct2018.sql
 """
 
 """

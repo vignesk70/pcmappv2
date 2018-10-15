@@ -163,7 +163,11 @@ class PCMMemberExpiring(LoginRequiredMixin,generic.ListView):
     template_name='pcmappv2/member_expiring.html'
     model=Member
     #queryset = Member.objects.select_related().filter(member_expiry_date__month=date.today().month,member_expiry_date__year=date.today().year)
-    queryset = Member.objects.select_related().filter(member_expiry_date__lte=date.today(),member_status=True).order_by('member_expiry_date')
+    q1 = Member.objects.select_related().filter(member_expiry_date__year=date.today().year,member_expiry_date__month=date.today().month,member_status=True).order_by('member_expiry_date')
+    q2 = Member.objects.select_related().filter(member_expiry_date__lte=date.today(),member_status=True).order_by('member_expiry_date')
+    #queryset = Member.objects.select_related().filter(member_expiry_date__year=date.today().year,member_expiry_date__month=date.today().month,member_status=True).order_by('member_expiry_date')
+    queryset = q1|q2
+
 
 class MembershipRenew(LoginRequiredMixin,generic.FormView):
     template_name = 'pcmappv2/renewmember.html'

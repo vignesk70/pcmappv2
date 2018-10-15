@@ -81,7 +81,7 @@ class Member(models.Model):
 
     @property
     def is_member_expiring_in_month(self):
-        if self.member_expiry_date < date.today() and self.member_status==True:
+        if self.member_expiry_date.month == date.today().month and self.member_expiry_date.year==date.today().year and self.member_status==True:
             return True
         else:
             return False

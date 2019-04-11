@@ -198,7 +198,7 @@ class Payment(models.Model):
                 mem.member_since=self.payment_date
                 mem.member_expiry_date = self.payment_date.replace(self.payment_date.year+2)
                 mem.save()
-            #update existing member
+            #update existing member - added logic to avoid saved records to update member expiry.
             if(mem.member_expiry_date != None and self.payment_type=='2'):
                 if(mem.member_expiry_date.year < self.payment_date.year+2):
                     mem.member_expiry_date = mem.member_expiry_date.replace(mem.member_expiry_date.year+2)

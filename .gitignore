@@ -102,3 +102,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+pcmv2/settings.py
+.DS_Store
+pcmv2/settings.py
+pcmv2/settings.py
+pcmv2/settings.py

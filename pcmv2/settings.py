@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'a53g33ob7p()2w1vhe$k@2pfw&j7+0$j2e=opyb^17l!x-ve@s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -76,31 +76,32 @@ WSGI_APPLICATION = 'pcmv2.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'pcmapp', #mypugclb_pcmapp
+#         'NAME': 'pcmappv2', #mypugclb_pcmapp
 #         'USER': 'root', #mypugclb_pugadm
-#         'PASSWORD': 'asdfgh123', #mT200stFPHY9
-#         'HOST': 'localhost',
+#         'PASSWORD': 'root', #mT200stFPHY9
+#         'HOST': '/Applications/MAMP/tmp/mysql/mysql.sock',
+#         'PORT':'8889'
 #     }
 # }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'peugeotclubmalay$pcmapp',
-        'USER': 'peugeotclubmalay',
-        'PASSWORD': 'asdfgh123',
-        'HOST': 'peugeotclubmalaysia.mysql.pythonanywhere-services.com',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'peugeotclubmalay$pcmapp',
+#         'USER': 'peugeotclubmalay',
+#         'PASSWORD': 'asdfgh123',
+#         'HOST': 'peugeotclubmalaysia.mysql.pythonanywhere-services.com',
+#     }
+# }
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 

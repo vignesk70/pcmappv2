@@ -44,8 +44,10 @@ def email_renewal_notice(member):
     subject = "Your membership is(was) due on "+ (member.member_expiry_date).strftime("%d %b %Y")
     message = subject + ". Please make payment and upload the receipt image from the Member Area of the PCM Website. "
     email_from = settings.EMAIL_HOST_USER
-    recipent_list = ['info@peugeotclubmalaysia.com',member.member_email]
-    print(message," ",recipent_list)
+    recipient_list = ['info@peugeotclubmalaysia.com',member.member_email]
+    send_mail(subject,message,email_from,recipient_list)
+    # print(message," ",recipent_list)
+    return True
 
 class IndexView(generic.TemplateView):
     template_name='pcmappv2/index.html'

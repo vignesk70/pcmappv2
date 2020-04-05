@@ -21,6 +21,7 @@ from chartjs.colors import next_color, COLORS
 from random import shuffle
 
 from django.db.models import Count
+from django.template.loader import render_to_string
 
 # Create your views here.
 
@@ -42,10 +43,11 @@ def email_renew(request):
 
 def email_renewal_notice(member):
     subject = "Your membership is(was) due on "+ (member.member_expiry_date).strftime("%d %b %Y")
-    message = "Dear "+member.member_name+",\n" +subject + ". Please make payment and upload the receipt image from the Member Area of the PCM Website. "
+    message = render_to_string('pcmappv2/reminder.html',{'member':member})
     email_from = settings.EMAIL_HOST_USER
     recipient_list = ['info@peugeotclubmalaysia.com',member.member_email]
-    send_mail(subject,message,email_from,recipient_list)
+    #recipient_list = [member.member_email]
+    send_mail(subject,message,email_from,recipient_list,html_message=message)
     #print(message," ",recipient_list)
     return True
 

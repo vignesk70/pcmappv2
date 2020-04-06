@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        
+       ('pcmappv2','0006_auto_20180912_0154'), 
     ]
 
     operations = [

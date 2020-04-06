@@ -1,15 +1,13 @@
 id,member_name,member_email,member_phone,member_since,member_birthdate,member_address_state,member_address_postcode,member_on_chat,member_source,member_expiry_date,member_pdpa_accepted,member_status,owner
 126,AARON CHIN YOON YIH,schoolofdrum@icloud.com,012-513 8331,2018-06-29,,,,True,FB,2020-06-29,False,True,127
 131,ABD AZIZ BIN OSMAN,aziz6346@gmail.com,019-710 3320,2018-07-29,,SL,41200,True,FB,2020-07-29,True,True,132
-177,AIZUL FITERI MASTOR,aizul.mastor@gmail.com,0193060556,,2019-08-31,SL,41200,True,SC,,True,True,183
 118,ALEX LOH WEN HANN,lohwen89@gmail.com,012-910 0732,2018-05-30,,,,True,FB,2020-05-30,False,True,119
-33,ALEX TAN,alextan81@gmail.com,012-258 0248,2015-09-30,,,,True,FB,2019-09-30,False,True,34
+33,ALEX TAN,alextan81@gmail.com,012-258 0248,2015-09-30,,,,True,FB,2019-09-30,False,False,34
 20,ALLAN KENNETH HVIID JENSEN,2008ahj@gmail.com,012-226 0875,2014-06-12,,,,False,FB,2018-06-12,False,False,21
 66,ALSON CHAY,alsonean@gmail.com,012-232 8370,2017-02-06,,,,True,FB,2021-02-06,False,True,67
 181,ARULMANI,a.arulmani@yahoo.com,0123935166,2020-01-04,1977-05-07,SL,41200,True,FB,2022-01-04,True,True,187
 107,ASHIDDIQUE FAIZAL BIN OSMAN,fadique02@yahoo.com,013-375 8041,2018-04-12,,,,True,FB,2020-04-12,False,True,108
 116,ASMAH BINTI ABD RAHMAN,asmah07@gmail.com,019-270 3470,2018-05-02,,,,True,FB,2020-05-02,False,True,117
-163,AZHARUDDIN ISNIN,azhar_pagoh@yahoo.com,0197292909,,1977-01-18,JH,81300,True,FB,,True,True,168
 6,AZRIL ALI BIN AHMAD RASHID,yakon7997@gmail.com,019-311 3887,2013-04-22,1981-10-09,SL,43000,True,FB,2022-05-01,False,True,7
 15,BARRY LIM,airborne016@gmail.com,012-236 9550,2014-05-04,,,,True,FB,2020-06-01,False,True,16
 79,BENNY LIAU YEW SOON,benny.liau@yahoo.com,012-326 2033,2017-05-20,1975-04-26,PG,14000,True,RE,2021-05-20,True,True,80
@@ -26,17 +24,16 @@ id,member_name,member_email,member_phone,member_since,member_birthdate,member_ad
 155,DASAN THANAM DIVEAN,dasan@iaays.com.my,0197097427,2019-02-18,1974-10-27,SL,43200,True,FB,2021-02-18,True,True,158
 81,DAVID TAN HENG LIAT,Dthliat@gmail.com,019-666 8030,2017-06-20,,,,True,FB,2023-06-20,False,True,82
 97,DENNIS YAM WEI KHEN,yam.dennis@gmail.com,012-335 1155,2018-01-28,,KL,46400,True,WO,2022-01-28,True,True,98
-169,DEVA HARIHARAN,devahariharan.shanker@gmail.com,0182479800,,1999-03-08,SL,40150,True,,,True,True,174
 88,DHAVINDRA KUMARI A/P SUBRAMANIAM,dhavk@yahoo.com,019-353 2689,2017-08-02,,,,True,FB,2019-08-02,False,False,89
 121,EDDY LEE YEW MUN,eddylee8080@gmail.com,013-772 2221,2018-06-07,,,,True,FB,2020-06-07,False,True,122
 14,EE CHEE LOON / JACK EE,cheeloonee@gmail.com,018-408 6800,2014-05-04,,,,True,FB,2018-05-05,False,False,15
-101,ENGKU AZIZ BIN CHE ENGKU MAN,engkuaziz2014@gmail.com,019-908 1179,2018-04-05,2018-03-18,PJ,,True,FB,2020-04-05,True,True,102
+101,ENGKU AZIZ BIN CHE ENGKU MAN,engkuaziz2014@gmail.com,014-9090789,2018-04-05,2018-03-18,PJ,,True,FB,2020-04-05,True,True,102
 95,ERIC GIDEON,doctorofzealonomics@yahoo.co.uk,012-973 3146,2017-11-17,1987-10-08,SL,42100,True,FB,2019-11-17,False,True,96
 83,FARAH AINI BINTI HOSNI HUSSEN,farahainihosnihussen@yahoo.com,017-683 4757,2017-07-14,,,,True,FB,2019-07-14,False,False,84
 102,FOO SAIK JIANG,sjfoo79@yahoo.com,012-412 1518,2018-04-05,1979-01-05,PG,11900,True,FB,2020-04-05,True,True,103
 174,FOO YEAN CHING,lkc5685@gmail.com,0124244022,2019-11-18,1958-01-16,PG,13600,True,SC,2021-11-18,True,True,180
 12,FREDDY WONG CHION PYNG,cpwongfreddy@gmail.com,65 8368 0538,2014-04-30,,,,True,FB,2020-04-30,False,True,13
-37,GAMMA RIZKINATA SATRIANA,gamz95@gmail.com,011-1668 9645,2016-02-02,,,,True,FB,2020-02-02,False,True,38
+37,GAMMA RIZKINATA SATRIANA,gamz95@gmail.com,011-1668 9645,2016-02-02,,,,True,FB,2022-02-02,False,True,38
 30,GRADIENT LOK WAI KEONG,gradientlok@gmail.com,012-329 6007,2015-06-02,,,,False,FB,2019-06-02,False,False,31
 10,HARRY DINESH MAHALINGAM,dr.harrydinesh@gmail.com,012-551 6506,2014-04-22,,,,True,FB,2020-04-22,False,True,11
 152,HARRY KOH,harrykoh168@gmail.com,0103639168,2019-01-15,1963-09-17,KL,57000,True,WO,2021-01-15,True,True,155
@@ -45,7 +42,7 @@ id,member_name,member_email,member_phone,member_since,member_birthdate,member_ad
 61,HEZAN BIN HAJI MOHD ZAINUDIN,hezanrg@gmail.com,017-885 9588,2017-01-12,,,,True,FB,2019-01-12,False,False,62
 73,"HO WOON HAN, WILLIE",hwh87109@gmail.com,012-638 6321,2017-03-24,1987-10-09,ME,78000,True,FB,2021-03-24,True,True,74
 91,HOSLINA MOHD ARIP,Hoslina@yahoo.com,016-236 1781,2017-09-06,,,,True,FB,2019-09-06,False,False,92
-34,IBRAHIM BIN AHMAD ZAMANI,ibrahimahmadzamani@gmail.com,012-382 9042,2015-10-16,,,,True,FB,2019-10-16,False,True,35
+34,IBRAHIM BIN AHMAD ZAMANI,ibrahimahmadzamani@gmail.com,012-382 9042,2015-10-16,,,,True,FB,2019-10-16,False,False,35
 180,IGNATIUSS  INBARAJ,igikkprk@gmail.com,0173956903,2020-01-04,1984-06-15,PK,33000,True,FB,2022-01-04,True,True,186
 128,INTAN NOOR HANIM BT ABD RAHIM,mattzphg@gmail.com,019-343 8687,2018-06-29,,,,True,FB,2020-06-29,False,True,129
 28,ISKANDAR HADI BIN MD JELA,Iskandarhadi@gmail.com,017-333 1343,2015-05-26,1979-09-15,SL,,True,WO,2021-05-26,True,True,29
@@ -62,21 +59,20 @@ id,member_name,member_email,member_phone,member_since,member_birthdate,member_ad
 145,KHOO KAH YOONG,kahyoong1711@gmail.com,0175729281,2018-12-26,1989-09-24,SL,42500,True,FB,2020-12-26,True,True,148
 115,KHOR WENG YEE,killer_khor@hotmail.com,016-696 7696,2018-05-02,,KH,08000,True,FB,2020-05-02,False,True,116
 132,KIRAN DAS,kiran.das@gmail.com,012-497 9773,2018-08-03,1978-03-19,SL,40170,True,FB,2020-08-03,False,True,133
-59,KRIS TAN KWANG CHUNG,kris7kc@gmail.com,012-558 9927,2016-12-12,,,,True,FB,2018-12-12,False,False,60
+59,KRIS TAN KWANG CHUNG,kris7kc@gmail.com,0176279676,2016-12-12,1977-06-14,SL,40200,True,RE,2022-02-23,False,True,60
 154,KUAN PIN SEAH,pinseah@gmail.com,012-4051711,2019-02-01,1963-07-07,PG,14100,True,WO,2021-02-01,True,True,157
 113,KWONG SOON FATT,alankwongsf@jasmine.com.my,016-260 3936,2018-04-26,1978-08-31,SL,43000,True,FB,2020-04-26,True,True,114
 25,LEE KOK JIUNN,Kok_jiunn@hotmail.com,012-472 5785,2015-05-12,,,,True,FB,2019-05-12,False,False,26
 1,"LEOW MING SIANG, ANDREW",blackdolphin8178@hotmail.com,012-268 8053,2004-02-19,1977-10-25,KL,57000,True,OT,2020-04-13,True,True,2
-39,LIAU YEE KHEE,ykliau@hotmail.com,019-560 2608,2016-02-15,,,,True,FB,2020-02-15,False,True,40
+39,LIAU YEE KHEE,ykliau@hotmail.com,019-560 2608,2016-02-15,,PG,,True,FB,2022-02-15,False,True,40
 78,LIEW K K,kkhuenliew@gmail.com,012-3212210,2017-05-18,1971-10-05,KL,58200,True,FB,2021-07-09,True,True,79
 72,"LIM CHENG CHIANG, LOUISS",louislim2@gmail.com,016-233 2426,2017-03-18,,,,True,FB,2019-03-18,False,False,73
 183,LIM SIEW LAN,seang3421@yahoo.com,0196555496,2020-01-08,1970-09-30,PG,11900,True,SC,2022-01-08,False,True,189
 7,LIM SU LONG / JON LIM,jon.kazee@gmail.com,012-472 6888,2013-04-23,,,,True,FB,2018-04-23,False,False,8
 3,"LIM TAU YEE, MACNECSS",macnecss@gmail.com,013-939 1331,2012-05-14,,,,True,FB,2020-05-04,False,False,4
 86,LIM YEE WEI,ye2wei@gmail.com,012-2095044,2017-07-25,1979-04-19,SL,47301,True,SC,2021-07-10,True,True,87
-173,LIM YEW WAI,vincelim.uy@gmail.com,0163388843,,,SL,43300,True,FB,,True,True,179
 18,LOGENATHAN A/L MUNISAMY,logen031@gmail.com,019-388 4429,2014-05-14,1979-03-31,SL,48000,True,FB,2020-05-14,False,True,19
-36,LOGESWARAN A/L MANIAM / LOGES,arulveera@yahoo.com,012-396 9598,2016-01-21,1976-07-21,SL,42100,True,RE,2020-01-21,True,True,37
+36,LOGESWARAN A/L MANIAM / LOGES,arulveera@yahoo.com,012-396 9598,2016-01-21,1976-07-21,SL,42100,True,RE,2020-01-21,True,False,37
 140,LOH KOK FUNG,kfcloh@gmail.com,0123836303,2017-08-02,1977-05-24,SL,47810,True,FB,2019-08-02,True,False,90
 40,"LOH ZHENG JIE, JAKE",Zjloh08@gmail.com,012-838 6955,2016-02-26,1985-08-08,SL,46150,True,WO,2020-02-26,True,True,41
 148,LOW HAN YUAN,Cancer.0624@hotmail.com,0162055063,2019-01-14,1990-06-24,SL,43300,True,SC,2021-01-14,True,True,151
@@ -113,10 +109,10 @@ id,member_name,member_email,member_phone,member_since,member_birthdate,member_ad
 45,MUHAMMAD EZMEER ABDUL RAHMAN,kicapi@gmail.com,017-609 2525,2016-06-29,,,,True,FB,2018-06-29,False,False,46
 103,MUHAMMAD FARHAN BIN MOHAMED NOR,gantz52@gmail.com,017-926 0238,2018-04-06,,,,True,FB,2020-04-06,False,True,104
 179,MUHAMMAD SYAFIQ  BIN ZULKAFLI,shapyx23@gmail.com,0172444371,2020-01-04,1993-05-12,SL,42000,True,FB,2022-01-04,False,True,185
-38,MUHAMMAD TAUFIQ BIN MOHAM,mutasi@gmail.com,019-388 8123,2016-02-14,,,,True,FB,2020-02-14,False,True,39
+38,MUHAMMAD TAUFIQ BIN MOHAM,mutasi@gmail.com,0193888123,2016-02-14,1983-03-30,SL,40000,True,FB,2020-02-14,False,True,39
 47,NARESH JEYAPALAN,mechnaresh93@gmail.com,016-673 4440,2016-07-01,1993-05-14,SL,47180,True,WO,2020-08-27,True,True,48
 96,NAVIN DEVAGARAM,navinn73@hotmail.com,012-619 4610,2017-12-20,,,,True,FB,2019-12-20,False,True,97
-41,NELSON ANG ZEN KIAT,nelsonang@gmail.com,012-256 9292,2016-02-29,1992-08-08,SL,47301,True,WO,2020-02-28,False,True,42
+41,NELSON ANG ZEN KIAT,nelsonang@gmail.com,013-949 4950,2016-02-29,1992-08-08,SL,47301,True,WO,2020-02-28,False,True,42
 55,NG ENG LEONG / KEVIN,kev770712@gmail.com,012-476 3599,2016-11-20,,,,True,FB,2018-11-20,False,False,56
 119,NG KIM CHU,ngkimchu@gmail.com,016-350 5054,2018-06-05,,KL,43200,True,FB,2020-06-05,True,True,120
 151,NG KOK HOE,kelvinng01@hotmail.com,0165682419,2019-01-15,1987-03-20,SL,42610,True,FB,2021-01-15,True,True,154
@@ -131,7 +127,7 @@ id,member_name,member_email,member_phone,member_since,member_birthdate,member_ad
 135,ONG YI,ongyi_92@hotmail.com,016-718 9873,2018-08-27,1992-08-08,KL,,True,FB,2020-08-27,False,True,136
 52,PON HONG KONG,honkongtra@gmail.com,012-398 8811,2016-11-03,1973-06-28,KL,56100,True,FB,2020-11-03,True,True,53
 108,PRISCILLA OH GIAT ENG,lita_wwf66@yahoo.com,012-318 9633,2018-04-18,1972-12-17,KL,43200,True,FB,2020-04-18,True,True,109
-94,PUN BOON JIUNN / BJ,bj.pun@primolifestyle.com.my,016-668 2929,2017-10-30,,,,True,FB,2019-10-30,False,True,95
+94,PUN BOON JIUNN / BJ,bj.pun@primolifestyle.com.my,016-668 2929,2017-10-30,,,,True,FB,2019-10-30,False,False,95
 42,RAJA NAZHATUL SHIMA BINTI RAJA ABDUL AZIZ,rajanazhatulshima@yahoo.co.uk,019-514 4539,2016-05-26,,,,True,FB,2018-05-26,False,False,43
 87,RAMESH RAMANATHAN A/L RAMANATHAN,rrnathan@deloitte.com,013-304 2265,2017-08-02,,,,True,FB,2019-08-02,False,False,88
 67,RASATHILLAGEN RASAINTHIRAN,thillagen@gmail.com,016-288 3221,2017-02-08,1989-05-23,SL,,True,FB,2019-02-08,False,False,68
@@ -144,7 +140,7 @@ id,member_name,member_email,member_phone,member_since,member_birthdate,member_ad
 170,SIOW CHYAN CHERNG (RYAN),ryansiow@rentalanns.com,0162208790,2019-08-22,1976-12-14,KL,53300,True,FB,2021-08-22,True,True,175
 85,SRIHARI SINGARAVEL,candielikethat@gmail.com,014-718 5896,2017-07-18,,,,True,FB,2019-07-18,False,False,86
 98,SUHAIRI SAMSUDIN,ecp030@yahoo.com.my,019-232 3181,2018-02-17,,NS,71950,True,OT,2020-02-17,False,True,99
-13,SUNNY NG KENG HAI,sunnyng.upc@gmail.com,016-921 1480,2014-05-05,,,,True,FB,2020-05-05,False,True,14
+13,SUNNY NG KENG HAI,sunnyng.upc@gmail.com,010-236 5995,2014-05-05,,,,True,FB,2020-05-05,False,True,14
 82,SURESH A/L SANTHALINGAM,diehard76@hotmail.com,012-611 5446,2017-07-11,,,,True,FB,2019-07-11,False,False,83
 106,SUSAN CHIN,susanchin69@yahoo.com,012-300 5244,2018-04-09,,,,True,FB,2020-04-09,False,True,107
 80,SYED AZHAR BIN SYED AZIZUDDIN,aimanofa@yahoo.com,019-222 9268,2017-06-07,,,,True,FB,2021-06-07,False,True,81
@@ -154,11 +150,11 @@ id,member_name,member_email,member_phone,member_since,member_birthdate,member_ad
 168,TAN KEAK HUAT PETER,peter.tan@live.com.my,0163323666,2019-08-03,1966-03-17,SL,47800,True,SC,2021-08-03,True,True,173
 19,TAN LEANG SING / RUSTY,tlsing99@gmail.com,012-460 2088,2014-05-19,1981-11-28,PG,13020,True,FB,2020-05-19,True,True,20
 156,TAN MIN HONG,reno0925@gmail.com,0104080162,2019-04-16,1988-06-10,JH,,True,FB,2021-04-16,True,True,161
-93,TAN SIT JAU / SJ,sitjau@gmail.com,016-306 7654,2017-10-16,,,,True,FB,2019-10-16,False,True,94
+93,TAN SIT JAU / SJ,sitjau@gmail.com,016-306 7654,2017-10-16,,,,True,FB,2019-10-16,False,False,94
 26,TAN YU ZHAN,yuzhan93@gmail.com,012-485 8593,2015-05-17,,,,True,FB,2019-05-17,False,False,27
 22,TANG BOON KHEE,unitec2006@hotmail.com,012-475 8379,2014-10-23,,KH,08000,True,FB,2018-10-23,True,False,23
 100,TEE TING LEONG,teetingleong@gmail.com,012-604 1291,2018-04-05,,,,True,FB,2020-04-05,False,True,101
-92,TEH TEIK HOE,thteh49@gmail.com,019-3270 672,2017-09-27,,,,True,FB,2019-09-27,False,True,93
+92,TEH TEIK HOE,thteh49@gmail.com,019-3270 672,2017-09-27,,,,True,FB,2021-09-14,False,True,93
 51,TEH YONG SHAN / JASON BRENDY,jasonbrendy95@gmail.com,017-438 9588,2016-11-01,,,,True,FB,2018-11-01,False,False,52
 75,TEJINDER SINGH,tj1313v@gmail.com,012-300 1253,2017-04-02,,,,True,FB,2019-04-02,False,False,76
 58,TEOH CHIN POH,cpteoh9678@yahoo.com,016-475 2429,2016-11-22,1976-08-02,PG,11600,True,FB,2020-11-22,True,True,59
@@ -174,4 +170,4 @@ id,member_name,member_email,member_phone,member_since,member_birthdate,member_ad
 142,YAZET B. SURAJI,ajityazet0@gmail.com,0177976145,2018-10-16,1974-09-27,SL,42700,True,OT,2020-10-16,True,True,144
 165,YEONG KEAT LENG,alankyeong@live.com,0162197983,2019-06-24,1983-05-11,KL,59000,True,FB,2021-06-24,True,True,170
 124,ZAINAL ZAKARIA,natzakaria@gmail.com,016-616 6803,2018-06-26,,,,True,FB,2020-06-26,False,True,125
-110,ZAKRY ZAINUDDIN,zakryzainuddin@gmail.com,103-277 7696,2018-04-18,,,,True,FB,2020-04-18,False,True,111
+110,ZAKRY ZAINUDDIN,zakryzainuddin@gmail.com,013-277 7696,2018-04-18,,,,True,FB,2020-04-18,False,True,111

@@ -38,7 +38,7 @@ for mem in members:
 
 """
 code for mysqlbackup on python pythonanywhere
-mysqldump -u peugeotclubmalay -h peugeotclubmalaysia.mysql.pythonanywhere-services.com 'peugeotclubmalay$pcmapp'  > db-backup_22Feb2020.sql
+mysqldump -u peugeotclubmalay -h peugeotclubmalaysia.mysql.pythonanywhere-services.com 'peugeotclubmalay$pcmapp'  > db-backup_06Apr2020.sql
 
 SELECT m.member_name, m.member_address_state, m.member_expiry_date,c.car_reg_no FROM pcmappv2_member m, pcmappv2_car c where c.member_id_id=m.id and m.member_status=1 and m.member_address_state in ('PG','KH')
 

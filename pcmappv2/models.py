@@ -183,6 +183,8 @@ class Payment(models.Model):
     payment_amount = models.IntegerField(verbose_name='Payment Amount')
     payment_type = models.CharField(max_length=1,choices = PAYMENT_CHOICES,verbose_name='Payment For')
     payment_receipt_image = models.FileField(upload_to='uploadreceipt',null=False,blank=False,verbose_name='Proof of Payment')
+    payment_updated_date = models.DateField(verbose_name="Admin updated date",auto_now=False, auto_now_add=False,blank=True,null=True)
+    payment_updated_by = models.ForeignKey(User, verbose_name="Admin User", on_delete=models.CASCADE,blank=True,null=True)
 
     def __str__(self):
         return self.payment_car_reg_no.member_name

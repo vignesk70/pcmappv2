@@ -23,14 +23,15 @@ class CarAdmin(admin.ModelAdmin):
     list_display=('car_reg_no','member_id','car_model')
     search_fields=('member_id__member_name','car_reg_no',)
 
-class PaymentAdmin(admin.ModelAdmin):
-    list_display = ['payment_car_reg_no','payment_date','payment_amount','payment_updated_date','payment_updated_by']
-    def save_model(self, request, obj, form, change):
-        obj.payment_updated_by = request.user
-        obj.payment_updated_date = date.today()
-        super().save_model(request, obj, form, change)
+# class PaymentAdmin(admin.ModelAdmin):
+#     list_display = ['payment_car_reg_no','payment_date','payment_amount','payment_updated_date','payment_updated_by']
+#     def save_model(self, request, obj, form, change):
+#         obj.payment_updated_by = request.user
+#         obj.payment_updated_date = date.today()
+#         super().save_model(request, obj, form, change)
 
 admin.site.register(Member,MemberAdmin)
 admin.site.register(Car,CarAdmin)
-admin.site.register(Payment,PaymentAdmin)
+#admin.site.register(Payment,PaymentAdmin)
+admin.site.register(Payment)
 admin.site.register(Activity)

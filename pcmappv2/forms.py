@@ -42,7 +42,7 @@ class SCCheckForm(forms.Form):
         car_reg_no = self.cleaned_data['car_reg_no']
         car_reg_no = car_reg_no.replace(" ", "")
         try:
-            obj = Car.objects.filter(car_reg_no=car_reg_no)
+            obj = Car.objects.filter(car_reg_no=car_reg_no).latest('id')
             return car_reg_no
         except Car.DoesNotExist:
             raise forms.ValidationError('No record found')

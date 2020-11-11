@@ -84,25 +84,25 @@ WSGI_APPLICATION = 'pcmv2.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'pcmappv2',  # mypugclb_pcmapp
-        'USER': 'root',  # mypugclb_pugadm
-        'PASSWORD': 'root',  # mT200stFPHY9
-        'HOST': '/Applications/MAMP/tmp/mysql/mysql.sock',
-        'PORT': '8889'
-    }
-}
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'peugeotclubmalay$pcmapp',
-#         'USER': 'peugeotclubmalay',
-#         'PASSWORD': 'asdfgh123',
-#         'HOST': 'peugeotclubmalaysia.mysql.pythonanywhere-services.com',
-#    }
+#         'NAME': 'pcmappv2',  # mypugclb_pcmapp
+#         'USER': 'root',  # mypugclb_pugadm
+#         'PASSWORD': 'root',  # mT200stFPHY9
+#         'HOST': '/Applications/MAMP/tmp/mysql/mysql.sock',
+#         'PORT': '8889'
+#     }
 # }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'peugeotclubmalay$pcmapp',
+        'USER': 'peugeotclubmalay',
+        'PASSWORD': 'asdfgh123',
+        'HOST': 'peugeotclubmalaysia.mysql.pythonanywhere-services.com',
+   }
+}
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 

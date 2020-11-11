@@ -77,32 +77,32 @@ WSGI_APPLICATION = 'pcmv2.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 #
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#    }
-#}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'pcmappv2',  # mypugclb_pcmapp
+        'USER': 'root',  # mypugclb_pugadm
+        'PASSWORD': 'root',  # mT200stFPHY9
+        'HOST': '/Applications/MAMP/tmp/mysql/mysql.sock',
+        'PORT': '8889'
+    }
+}
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'pcmappv2', #mypugclb_pcmapp
-#         'USER': 'root', #mypugclb_pugadm
-#         'PASSWORD': 'root', #mT200stFPHY9
-#         'HOST': '/Applications/MAMP/tmp/mysql/mysql.sock',
-#         'PORT':'8889'
-#     }
+#         'NAME': 'peugeotclubmalay$pcmapp',
+#         'USER': 'peugeotclubmalay',
+#         'PASSWORD': 'asdfgh123',
+#         'HOST': 'peugeotclubmalaysia.mysql.pythonanywhere-services.com',
+#    }
 # }
-DATABASES = {
-     'default': {
-         'ENGINE': 'django.db.backends.mysql',
-         'NAME': 'peugeotclubmalay$pcmapp',
-         'USER': 'peugeotclubmalay',
-         'PASSWORD': 'asdfgh123',
-         'HOST': 'peugeotclubmalaysia.mysql.pythonanywhere-services.com',
-    }
-}
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
@@ -155,15 +155,15 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'vigneswaren.krishnamoorthy@gmail.com'
-EMAIL_HOST_PASSWORD = 'gjliyxwuoycsnxus'
+EMAIL_HOST_PASSWORD = 'xjrzvhsfvrhhmymb'
 
 
-#deployment parameters
+# deployment parameters
 # X_FRAME_OPTIONS = 'SAME-ORIGIN'
 # SESSION_COOKIE_SECURE = True
 # SECURE_CONTENT_TYPE_NOSNIFF = True
 # CSRF_COOKIE_SECURE = True
 # SECURE_BROWSER_XSS_FILTER = True
 
-#google recaptcha
-GOOGLE_RECAPTCHA_SECRET_KEY = '6Lds744UAAAAAN7puuBrmXbZ6QHfoUXerxFZfL9h'
+# google recaptcha
+GOOGLE_RECAPTCHA_SECRET_KEY = '6LeuTNsUAAAAAKaxubwIR82Ii8xF88UE6Cy92bp6'

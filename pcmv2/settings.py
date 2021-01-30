@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+# import pymysql
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -94,6 +95,7 @@ WSGI_APPLICATION = 'pcmv2.wsgi.application'
 #         'PORT': '8889'
 #     }
 # }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -103,6 +105,20 @@ DATABASES = {
         'HOST': 'peugeotclubmalaysia.mysql.pythonanywhere-services.com',
    }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'pcmappv2',
+#         'USER': 'root',
+#         'PASSWORD': 'Vikipoo99',
+#         'HOST': '/tmp/mysql.sock',
+#    }
+# }
+
+# pymysql.version_info = (1, 4, 2, "final", 0)
+# pymysql.install_as_MySQLdb()
+
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
@@ -166,4 +182,7 @@ EMAIL_HOST_PASSWORD = 'ujdxkyeogvfcdsad'
 # SECURE_BROWSER_XSS_FILTER = True
 
 # google recaptcha
-GOOGLE_RECAPTCHA_SECRET_KEY = '6LeuTNsUAAAAAKaxubwIR82Ii8xF88UE6Cy92bp6'
+# local
+# GOOGLE_RECAPTCHA_SECRET_KEY = '6LeuTNsUAAAAAKaxubwIR82Ii8xF88UE6Cy92bp6'
+# prod
+GOOGLE_RECAPTCHA_SECRET_KEY = '6Lds744UAAAAAN7puuBrmXbZ6QHfoUXerxFZfL9h'
